@@ -43,95 +43,170 @@ Left-align: This works to align text left on this slide only.
 
 ## {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
+<br><br><br><br>
 <img class="plain" src="images/study_schema.jpg" >
 
 ## Project 1. VisuNet: an interactive tool for network visualization of rule-based models {data-background-image="images/UU-figures-en-2019copy.jpg" .emphasized}
+
+## Explainability make classifiers biologically meaningful {data-background-image="images/UU-figures-en-2019copy.jpg" .emphasized}
+
+
+
+<img class="plain" src="images/schema.png">
+
+Explainability:
+
+- What combinations of genes/variables contribute to classification?
+- What variables/genes are more important?
 
 
 
 ## Rule-network (RN) construction  {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
-<img class="plain" src="images/schema.png">
+
+Interactions are discovered from transparent classifiers, such as rule-based classifiers (RBC). 
 
 <img class="plain" src="images/Rule-network_contruction2.png">
+
+<br><br>
+The conjuncts are co-predictive of the decision.
+
+Nodes - conjuncts in rules, ie. features with their values occurring in the rules
+
+Edge - connects two nodes if the corresponding conjuncts occur in the same rule. 
+
+Rule networks are built for each decision (outcome class).
 
 
 ## VisuNet {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
 
-<img class="plain" src="images/VIsuNet_logo2copy.png" height="50">
-
-* an R package 
-* Publicly available on GitHub: https://github.com/komorowskilab/VisuNet
-
-<img class="plain" src="images/interface.png" height="250">
+<center><img class="plain" src="images/VIsuNet_logo2copy.png" height="100"></center>
 
 
-## Data overview {data-background-image="images/UU-figures-en-2019copy.jpg"}
+- RN visualisation tool implemented as an R package, 
+- helps identifying the strongest features and their values and the interdependencies in an ensemble of rules,
+- easy to use due to an interactive interface, 
+- applicable for any rule-based classifier in a correct format,
+- available on GitHub: https://github.com/komorowskilab/VisuNet
+
+<center><img class="plain" src="images/interface.png" height="250"></center>
+
+
+## Applications {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
 ```{r, echo =FALSE}
-collapse_rows_dt <- data.frame(Dataset = c(rep("Autism (MG)", 1), 
-                                           rep("Amara (FB&ZK)", 4),
-                                           rep("ULSAM (KD)", 1),
-                                           rep("Synthetic data (KS)",3)),
+collapse_rows_dt <- data.frame(Dataset = c(paste0(rep("Autism (MG)", 1),footnote_marker_number(1)), 
+                                           paste0(rep("SIV (FB&ZK)", 4),footnote_marker_number(2)),
+                                           paste0(rep("ULSAM (KD)", 1),footnote_marker_number(3)),
+                                           paste0(rep("Synthetic data (KS)",1),footnote_marker_number(4))),
+                               `Data type` = c(c('gene expressions microarray'),
+                                               rep("gene expression", 4),
+                                               rep("metabolite levels", 1),
+                                               rep("features correlated within each other and with the decision in the interval 0.1-1", 1)),
                                `N objects` = c(c('146 patients: 82 autistic and 64 healthy boys'),
-                                              rep('22 rhesus macaque:\n 10 infected in less than 4 challenges (Early) and 12 infected in more than 6 challenges(Late)', 4),
-                                              c('963 patients: 134 T2D and 829 ND'),
-                                              rep("120 obejcts: 60 D1 and 60 D2",3)
+                                              rep('22 rhesus macaque:\n 10 infected in less than 4 challenges (Early) and 12 infected in more than 6 challenges (Late)', 4),
+                                              c('963 patients: 134 type 2 diabetes (T2D) and 829 non-diabetes (ND)'),
+                                              rep("500 objects: 250 D1 and 250 D2",1)
                                  
                                ),
                                Decision = c(rep("Autism vs Control", 1), 
                                            rep("Early vs Late", 4),
                                            rep("ND (non-diabetes) vs T2D (type 2 diabetes)", 1),
-                                           rep("D1 vs D2",3)),
+                                           rep("D1 vs D2",1)),
                               Models =c( c("-"),
                               c("W0", "W16", "W32", "C1"),
                               c("-"),
-                              c("weak correlation (0.2-0.5)", "medium correlation (0.2-0.7)", "strong correlation (0.5 -0.9)")),
-                              `N features` = c(c('mcfs is running'),
+                              c("100 models")),
+                              `N features` = c(c(35),
                                               c(597,1068,723,448),
                                               c(19),
-                                              c(18,18,18)),
-                              `Model quality` = c(c('-'),
+                                              c(25)),
+                              `Model quality` = c(c('80%'),
                                                   c('95%','100%','100%','95%'),
                                               c('67%'),
-                                              c('59%','76%','93%')),
-                              `Visunet Param` = c(c('-'),
-                                                   c('Min. accuracy = 80%, min decision coverage =0.6, N top nodes=20',
-                                                     rep('”',3)),
-                                                     c('-'),
-                                                     rep('-',3))
+                                              c('from 48% to 100%'))
+                             
                                )
 
 
-kable(collapse_rows_dt, format = 'html', align = "c") %>%
+kable(collapse_rows_dt, format = 'html', align = rep("c",7),escape = F, col.names = c("Dataset",
+                           "Data type",
+                           "#objects",
+                           "Decision",
+                           "Models",
+                           "#features",
+                           "Model quality")) %>%
   kable_styling(full_width = F, font_size = 13,position = "center") %>%
   column_spec(1, bold = T) %>%
   column_spec(2, width = "10em") %>% 
-  collapse_rows(columns = 1:2, valign = "top")
+  collapse_rows(columns = 1:4, valign = "middle") %>%
+  footnote(general = "Data sorce",
+           number = c("Alter, M.D., et al., 2011",
+                      "Barrenäs, F., et al., 2019",
+                      "", "Garbulowski, M., et al., 2019 ")
+           )
 
 ```
+
+
+
+
 
 <h5><p align="left">MG - Mateusz Garbulowski</p></h5>
 <h5><p align="left">FB&ZK - Fredrik Barrenäs & Zeeshan Khaliq</p></h5>
 <h5><p align="left">KD - Klev Diamanti</p></h5>
 <h5><p align="left">KS - Karolina Smolinska</p> </h5>
 
-## Case-control studies of autism spectrum disorders - sample RN {data-background-image="images/UU-figures-en-2019copy.jpg"}
+## Case-control studies of autism - sample RN {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
-Top 10% 
-<iframe src='net.html' style='height:500px;width:700px'></iframe> 
+<iframe src='images/net_Autism_fig_new1.html' style='height:800px;width:800px'></iframe> 
 
-## MAP7 and COX2 interdependecies {data-background-image="images/UU-figures-en-2019copy.jpg"}
+## Case-control studies of autism - sample RN {data-background-image="images/UU-figures-en-2019copy.jpg"}
+
+<center><img class="plain" src="images/Autism_net_cust.png" height="500"></center>
+
+4 genes were previously reported in the SFARI Gene database of autism associations: COX2,  TMLHE,  NCKAP5L and TSPOAP1.
+
+Several genes identified in the literature, which need to be verified: ZSCAN18, SCIN, NCS1, CAPS2, ZFP36L2.
+
+
+
+## A  potential important role of MAP7 and COX2 interdependecy in autism {data-background-image="images/UU-figures-en-2019copy.jpg"}
+
+<div id="left">
+The strongest interdependency is visible between COX2 and MAP7. 
+  
+COX2 regulates anxiety behavior in the mouse model (Wong, C.T., et al., 2019)
+
+MAP7 is required for axon growth and branch formation during embryonic brain formation.
+The association of MAP7 with autism and schizophrenia was previously reported (Tymanskyj, S.R., et al., 2017)
+
+RN may suggest a link between embryonic development events and anxiety behaviour.
+
+</div>
+
+<div id="right">
+<center><img class="plain" src="images/COX2.png" align="middle"></center>
+
+</div>
 
 ## Project 1 - Summary  {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
+- VisuNet is conceptually simple, but useful for the interdependencies discovery in RBCs,
+- RN  identifies different combinations of features and their  discretisation levels that are associated with decisions,
+- RN helps explain the differences beteen the classes,
+- In the the autism-control RN confirms some known genes associated with autism,
+- RN may suggest a new functionality for other of the attributes, e.g. MAP7 and CAPS2
+
+
+The manuscript will be finished by the end of this year.
 
 ## Project 2: funMotifs and the functional annotation of the tissue-specific noncoding mutations {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
 Aims of the project were identification and analysis of significant functional motifs in non coding region of the human genome.
 
-The
+The  TF motifs - background
 
 funMotifs was developed by Husen M. Umer and I was mainly working on the framework applications.
 
@@ -160,7 +235,7 @@ In the tissue(s) relevant for the variant.
 - DNaseI peak
 - Functionality score > 2.5 or TF-peak
 
-<center><img class="plain" src="images/fun_score.png" height="200" ></center>
+<center><img class="plain" src="images/fun_score.png" height="160" ></center>
 </div>
 
 <div id="right">
@@ -169,9 +244,10 @@ In the tissue(s) relevant for the variant.
 </div>
 
 ## Manuscript 1 {data-background-image="images/UU-figures-en-2019copy.jpg"}
-<img class="plain" src="images/funMotifs_paper.png"  align="middle" style="border:1px solid black">
+<center><img class="plain" src="images/funMotifs_paper.png"  align="middle" style="border:1px solid black"><center>
 
 <div id="left">
+<b>Applications:</b>
 
 - SNPs and short indels from 1000 Genome project (HU & KS)
 - eQTL SNPs from the GTEx data portal v7 (HU & KS)
@@ -183,12 +259,12 @@ In the tissue(s) relevant for the variant.
 </div>
 
 <div id="right">
-<img class="plain" src="images/funmotifs_app.jpg" height="500" align="middle" >
+<img class="plain" src="images/funmotifs_app.png" height="450" align="middle" >
 </div>
 
 ## Comparison to existing annotation databases {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
-2,219,330 eQTL SNPs were annotatied using funMotifs, RegulomeDB and HaploReg.
+2,219,330 eQTL SNPs were annotated using funMotifs, RegulomeDB and HaploReg.
 
 <div id="left">
 ```{r, echo =FALSE}
@@ -197,15 +273,13 @@ RegulomeDB <- c("Yes", "Yes", "Yes", 'No')
 HaploReg <-c("Yes", "No", "Yes", 'No')
 data <- data.frame(funMotifs,RegulomeDB, HaploReg )
 rownames(data) <- c("Genome wide","Functionality score","Functional annotations","Tissue Specificity")
-knitr::kable(data)
-
+knitr::kable(data)%>%
+  kable_styling(font_size = 18)
 ```
 </div>
 
 <div id="right">
-
-
-<center><img class="plain" src="images/funmotif_comp.png" height="300"></center>
+<center><img class="plain" src="images/funmotif_comp.png" height="450"></center>
 </div>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -215,19 +289,39 @@ HaploReg: Ward,L.D., et al. (2016)
 
 ## Overview of the candidate functional GWAS SNP rs8103622 in breast tissue {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
-<center><img class="plain" src="images/funmotifs_snp.png" height="800"></center>
+<center><img class="plain" src="images/funmotifs_snp.png" height="600"></center>
+
+## Manuscript 2 {data-background-image="images/UU-figures-en-2019copy.jpg"}
+
+<center><img class="plain" src="images/MS_2.png" align="middle" style="border:1px solid black"></center>
+
+<b>The Aim of the study</b>
+
+Functional annotation of mutations in the Pan Cancer Analysis of Whole Genomes consortium data for 2,500 cancer genomes in 37 cancer types. 
+ **the iverview of mutation plot**
+
 
 ## Pancancer {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
-<img class="plain" src="images/pancancer_schema.jpg" height="800" align="middle">
+<center><img class="plain" src="images/pancancer_schema.png" height="650" align="middle"></center>
+
+## CEBP mutatation {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
 ## Project 2 - Summary  {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
+- funMotifs was implemented as a command-line pipeline (https://github.com/komorowskilab/funMotifs) and a web-based interface: http://bioinf.icm.uu.se/funmotifs.
 
 
 
 ## Future plans {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
+- Project 1.  - implement the possibility to annotate the RN attributes using biological properties of the input datatypes and various databases, e.g. GO terms for a gene expresession data. 
+
+- Project 2. - Modification of the funMotifs algorithm to improve indetification of the false positive regulatory motifs. We are planning to continue research on the functional annotation of motifs using funMotifs. We would like to extend the functional motifs definition in terms of the conservation of the individual nucleotides in transcription factor motifs.  
+
+- Project 3. on identification and visualization of interdependent genes that discern patients in the case-control studies of autism spectrum disorders by combining multiple, rule-based classifiers. 
+
+- Project 4.- indetification of potential biomarkers that discern glioma subtypes using CFRMs from the COSMIC-available mutations for gliomas. We intersected the results with the differenialy expressed genes based on the TCGA and GTEx databases.
 
 ##  {data-background-image="images/UU-figures-en-2019copy.jpg"}
 

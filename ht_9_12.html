@@ -466,27 +466,47 @@ Left-align: This works to align text left on this slide only.
 </section>
 <section id="section" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2></h2>
-<p><img class="plain" src="images/study_schema.jpg" ></p>
+<p><br><br><br><br> <img class="plain" src="images/study_schema.jpg" ></p>
 </section>
 <section id="project-1.-visunet-an-interactive-tool-for-network-visualization-of-rule-based-models" class="slide level2 emphasized" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2>Project 1. VisuNet: an interactive tool for network visualization of rule-based models</h2>
 </section>
+<section id="explainability-make-classifiers-biologically-meaningful" class="slide level2 emphasized" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>Explainability make classifiers biologically meaningful</h2>
+<p><img class="plain" src="images/schema.png"></p>
+<p>Explainability:</p>
+<ul>
+<li>What combinations of genes/variables contribute to classification?</li>
+<li>What variables/genes are more important?</li>
+</ul>
+</section>
 <section id="rule-network-rn-construction" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2>Rule-network (RN) construction</h2>
-<p><img class="plain" src="images/schema.png"></p>
+<p>Interactions are discovered from transparent classifiers, such as rule-based classifiers (RBC).</p>
 <p><img class="plain" src="images/Rule-network_contruction2.png"></p>
+<p><br><br> The conjuncts are co-predictive of the decision.</p>
+<p>Nodes - conjuncts in rules, ie. features with their values occurring in the rules</p>
+<p>Edge - connects two nodes if the corresponding conjuncts occur in the same rule.</p>
+<p>Rule networks are built for each decision (outcome class).</p>
 </section>
 <section id="visunet" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2>VisuNet</h2>
-<p><img class="plain" src="images/VIsuNet_logo2copy.png" height="50"></p>
+<center>
+<img class="plain" src="images/VIsuNet_logo2copy.png" height="100">
+</center>
 <ul>
-<li>an R package</li>
-<li>Publicly available on GitHub: <a href="https://github.com/komorowskilab/VisuNet" class="uri">https://github.com/komorowskilab/VisuNet</a></li>
+<li>RN visualisation tool implemented as an R package,</li>
+<li>helps identifying the strongest features and their values and the interdependencies in an ensemble of rules,</li>
+<li>easy to use due to an interactive interface,</li>
+<li>applicable for any rule-based classifier in a correct format,</li>
+<li>available on GitHub: <a href="https://github.com/komorowskilab/VisuNet" class="uri">https://github.com/komorowskilab/VisuNet</a></li>
 </ul>
-<p><img class="plain" src="images/interface.png" height="250"></p>
+<center>
+<img class="plain" src="images/interface.png" height="250">
+</center>
 </section>
-<section id="data-overview" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
-<h2>Data overview</h2>
+<section id="applications" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>Applications</h2>
 <table class="table" style="font-size: 13px; width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -494,7 +514,10 @@ Left-align: This works to align text left on this slide only.
 Dataset
 </th>
 <th style="text-align:center;">
-N.objects
+Data type
+</th>
+<th style="text-align:center;">
+#objects
 </th>
 <th style="text-align:center;">
 Decision
@@ -503,22 +526,22 @@ Decision
 Models
 </th>
 <th style="text-align:center;">
-N.features
+#features
 </th>
 <th style="text-align:center;">
-Model.quality
-</th>
-<th style="text-align:center;">
-Visunet.Param
+Model quality
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:center;font-weight: bold;">
-Autism (MG)
+Autism (MG)<sup>1</sup>
 </td>
 <td style="text-align:center;width: 10em; ">
+gene expressions microarray
+</td>
+<td style="text-align:center;">
 146 patients: 82 autistic and 64 healthy boys
 </td>
 <td style="text-align:center;">
@@ -528,23 +551,23 @@ Autism vs Control
 <ul>
 <li></td>
 <td style="text-align:center;">
-mcfs is running
+35
 </td>
 <td style="text-align:center;">
-<ul>
-<li></td>
-<td style="text-align:center;">
-<ul>
-<li></td>
+80%
+</td>
 </tr>
 <tr>
-<td style="text-align:center;font-weight: bold;vertical-align: top !important;" rowspan="4">
-Amara (FB&amp;ZK)
+<td style="text-align:center;font-weight: bold;vertical-align: middle !important;" rowspan="4">
+SIV (FB&amp;ZK)<sup>2</sup>
 </td>
-<td style="text-align:center;width: 10em; vertical-align: top !important;" rowspan="4">
-22 rhesus macaque: 10 infected in less than 4 challenges (Early) and 12 infected in more than 6 challenges(Late)
+<td style="text-align:center;width: 10em; vertical-align: middle !important;" rowspan="4">
+gene expression
 </td>
-<td style="text-align:center;">
+<td style="text-align:center;vertical-align: middle !important;" rowspan="4">
+22 rhesus macaque: 10 infected in less than 4 challenges (Early) and 12 infected in more than 6 challenges (Late)
+</td>
+<td style="text-align:center;vertical-align: middle !important;" rowspan="4">
 Early vs Late
 </td>
 <td style="text-align:center;">
@@ -556,16 +579,8 @@ W0
 <td style="text-align:center;">
 95%
 </td>
-<td style="text-align:center;">
-Min. accuracy = 80%, min decision coverage =0.6, N top nodes=20
-</td>
 </tr>
-<tr></li>
-</ul></li>
-</ul>
-<td style="text-align:center;">
-Early vs Late
-</td>
+<tr>
 <td style="text-align:center;">
 W16
 </td>
@@ -575,14 +590,8 @@ W16
 <td style="text-align:center;">
 100%
 </td>
-<td style="text-align:center;">
-”
-</td>
 </tr>
 <tr>
-<td style="text-align:center;">
-Early vs Late
-</td>
 <td style="text-align:center;">
 W32
 </td>
@@ -592,14 +601,8 @@ W32
 <td style="text-align:center;">
 100%
 </td>
-<td style="text-align:center;">
-”
-</td>
 </tr>
 <tr>
-<td style="text-align:center;">
-Early vs Late
-</td>
 <td style="text-align:center;">
 C1
 </td>
@@ -609,16 +612,16 @@ C1
 <td style="text-align:center;">
 95%
 </td>
-<td style="text-align:center;">
-”
-</td>
 </tr>
 <tr>
 <td style="text-align:center;font-weight: bold;">
-ULSAM (KD)
+ULSAM (KD)<sup>3</sup>
 </td>
 <td style="text-align:center;width: 10em; ">
-963 patients: 134 T2D and 829 ND
+metabolite levels
+</td>
+<td style="text-align:center;">
+963 patients: 134 type 2 diabetes (T2D) and 829 non-diabetes (ND)
 </td>
 <td style="text-align:center;">
 ND (non-diabetes) vs T2D (type 2 diabetes)
@@ -632,72 +635,63 @@ ND (non-diabetes) vs T2D (type 2 diabetes)
 <td style="text-align:center;">
 67%
 </td>
-<td style="text-align:center;">
-<ul>
-<li></td>
 </tr>
 <tr>
-<td style="text-align:center;font-weight: bold;vertical-align: top !important;" rowspan="3">
-Synthetic data (KS)
+<td style="text-align:center;font-weight: bold;">
+Synthetic data (KS)<sup>4</sup>
 </td>
-<td style="text-align:center;width: 10em; vertical-align: top !important;" rowspan="3">
-120 obejcts: 60 D1 and 60 D2
+<td style="text-align:center;width: 10em; ">
+features correlated within each other and with the decision in the interval 0.1-1
+</td>
+<td style="text-align:center;">
+500 objects: 250 D1 and 250 D2
 </td>
 <td style="text-align:center;">
 D1 vs D2
 </td>
 <td style="text-align:center;">
-weak correlation (0.2-0.5)
+100 models
 </td>
 <td style="text-align:center;">
-18
+25
 </td>
 <td style="text-align:center;">
-59%
+from 48% to 100%
 </td>
-<td style="text-align:center;">
-<ul>
-<li></td>
-</tr>
-<tr></li>
-</ul></li>
-</ul></li>
-</ul>
-<td style="text-align:center;">
-D1 vs D2
-</td>
-<td style="text-align:center;">
-medium correlation (0.2-0.7)
-</td>
-<td style="text-align:center;">
-18
-</td>
-<td style="text-align:center;">
-76%
-</td>
-<td style="text-align:center;">
-<ul>
-<li></td>
-</tr>
-<tr></li>
-</ul>
-<td style="text-align:center;">
-D1 vs D2
-</td>
-<td style="text-align:center;">
-strong correlation (0.5 -0.9)
-</td>
-<td style="text-align:center;">
-18
-</td>
-<td style="text-align:center;">
-93%
-</td>
-<td style="text-align:center;">
-<ul>
-<li></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<span style="font-style: italic;">Note: </span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<sup></sup> Data sorce
+</td>
+</tr>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<sup>1</sup> Alter, M.D., et al., 2011
+</td>
+</tr>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<sup>2</sup> Barrenäs, F., et al., 2019
+</td>
+</tr>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<sup>3</sup>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<sup>4</sup> Garbulowski, M., et al., 2019
+</td>
+</tr>
+</tfoot>
 </table></li>
 </ul></li>
 </ul>
@@ -722,20 +716,48 @@ KS - Karolina Smolinska
 </p>
 </h5>
 </section>
-<section id="case-control-studies-of-autism-spectrum-disorders---sample-rn" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
-<h2>Case-control studies of autism spectrum disorders - sample RN</h2>
-<p>Top 10% <iframe src='net.html' style='height:500px;width:700px'></iframe></p>
+<section id="case-control-studies-of-autism---sample-rn" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>Case-control studies of autism - sample RN</h2>
+<iframe src="images/net_Autism_fig_new1.html" style="height:800px;width:800px">
+</iframe>
 </section>
-<section id="map7-and-cox2-interdependecies" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
-<h2>MAP7 and COX2 interdependecies</h2>
+<section id="case-control-studies-of-autism---sample-rn-1" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>Case-control studies of autism - sample RN</h2>
+<center>
+<img class="plain" src="images/Autism_net_cust.png" height="500">
+</center>
+<p>4 genes were previously reported in the SFARI Gene database of autism associations: COX2, TMLHE, NCKAP5L and TSPOAP1.</p>
+<p>Several genes identified in the literature, which need to be verified: ZSCAN18, SCIN, NCS1, CAPS2, ZFP36L2.</p>
+</section>
+<section id="a-potential-important-role-of-map7-and-cox2-interdependecy-in-autism" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>A potential important role of MAP7 and COX2 interdependecy in autism</h2>
+<div id="left">
+<p>The strongest interdependency is visible between COX2 and MAP7.</p>
+<p>COX2 regulates anxiety behavior in the mouse model (Wong, C.T., et al., 2019)</p>
+<p>MAP7 is required for axon growth and branch formation during embryonic brain formation. The association of MAP7 with autism and schizophrenia was previously reported (Tymanskyj, S.R., et al., 2017)</p>
+<p>RN may suggest a link between embryonic development events and anxiety behaviour.</p>
+</div>
+<div id="right">
+<center>
+<img class="plain" src="images/COX2.png" align="middle">
+</center>
+</div>
 </section>
 <section id="project-1---summary" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2>Project 1 - Summary</h2>
+<ul>
+<li>VisuNet is conceptually simple, but useful for the interdependencies discovery in RBCs,</li>
+<li>RN identifies different combinations of features and their discretisation levels that are associated with decisions,</li>
+<li>RN helps explain the differences beteen the classes,</li>
+<li>In the the autism-control RN confirms some known genes associated with autism,</li>
+<li>RN may suggest a new functionality for other of the attributes, e.g. MAP7 and CAPS2</li>
+</ul>
+<p>The manuscript will be finished by the end of this year.</p>
 </section>
 <section id="project-2-funmotifs-and-the-functional-annotation-of-the-tissue-specific-noncoding-mutations" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2>Project 2: funMotifs and the functional annotation of the tissue-specific noncoding mutations</h2>
 <p>Aims of the project were identification and analysis of significant functional motifs in non coding region of the human genome.</p>
-<p>The</p>
+<p>The TF motifs - background</p>
 <p>funMotifs was developed by Husen M. Umer and I was mainly working on the framework applications.</p>
 <p>Two manuscripts were written based on the Project 2.</p>
 </section>
@@ -763,7 +785,7 @@ KS - Karolina Smolinska
 <li>Functionality score &gt; 2.5 or TF-peak</li>
 </ul>
 <center>
-<img class="plain" src="images/fun_score.png" height="200" >
+<img class="plain" src="images/fun_score.png" height="180" >
 </center>
 </div>
 <div id="right">
@@ -772,8 +794,11 @@ KS - Karolina Smolinska
 </section>
 <section id="manuscript-1" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2>Manuscript 1</h2>
-<p><img class="plain" src="images/funMotifs_paper.png"  align="middle" style="border:1px solid black"></p>
+<center>
+<img class="plain" src="images/funMotifs_paper.png"  align="middle" style="border:1px solid black">
+<center>
 <div id="left">
+<p><b>Applications:</b></p>
 <ul>
 <li>SNPs and short indels from 1000 Genome project (HU &amp; KS)</li>
 <li>eQTL SNPs from the GTEx data portal v7 (HU &amp; KS)</li>
@@ -788,14 +813,14 @@ KS - Karolina Smolinska
 </h5>
 </div>
 <div id="right">
-<p><img class="plain" src="images/funmotifs_app.jpg" height="500" align="middle" ></p>
+<p><img class="plain" src="images/funmotifs_app.png" height="450" align="middle" ></p>
 </div>
 </section>
 <section id="comparison-to-existing-annotation-databases" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2>Comparison to existing annotation databases</h2>
-<p>2,219,330 eQTL SNPs were annotatied using funMotifs, RegulomeDB and HaploReg.</p>
+<p>2,219,330 eQTL SNPs were annotated using funMotifs, RegulomeDB and HaploReg.</p>
 <div id="left">
-<table>
+<table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;">
@@ -873,7 +898,7 @@ No
 </div>
 <div id="right">
 <center>
-<img class="plain" src="images/funmotif_comp.png" height="300">
+<img class="plain" src="images/funmotif_comp.png" height="450">
 </center>
 </div>
 <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> RegulomeDB: Boyle,A.P., et al. (2012)</p>
@@ -882,18 +907,40 @@ No
 <section id="overview-of-the-candidate-functional-gwas-snp-rs8103622-in-breast-tissue" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2>Overview of the candidate functional GWAS SNP rs8103622 in breast tissue</h2>
 <center>
-<img class="plain" src="images/funmotifs_snp.png" height="800">
+<img class="plain" src="images/funmotifs_snp.png" height="600">
 </center>
+</section>
+<section id="manuscript-2" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>Manuscript 2</h2>
+<center>
+<img class="plain" src="images/MS_2.png" align="middle" style="border:1px solid black">
+</center>
+<p><b>The Aim of the study</b></p>
+<p>Functional annotation of mutations in the Pan Cancer Analysis of Whole Genomes consortium data for 2,500 cancer genomes in 37 cancer types. <strong>the iverview of mutation plot</strong></p>
 </section>
 <section id="pancancer" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2>Pancancer</h2>
-<p><img class="plain" src="images/pancancer_schema.jpg" height="800" align="middle"></p>
+<center>
+<img class="plain" src="images/pancancer_schema.png" height="650" align="middle">
+</center>
+</section>
+<section id="cebp-mutatation" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>CEBP mutatation</h2>
 </section>
 <section id="project-2---summary" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2>Project 2 - Summary</h2>
+<ul>
+<li>funMotifs was implemented as a command-line pipeline (<a href="https://github.com/komorowskilab/funMotifs" class="uri">https://github.com/komorowskilab/funMotifs</a>) and a web-based interface: <a href="http://bioinf.icm.uu.se/funmotifs" class="uri">http://bioinf.icm.uu.se/funmotifs</a>.</li>
+</ul>
 </section>
 <section id="future-plans" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2>Future plans</h2>
+<ul>
+<li><p>Project 1. - implement the possibility to annotate the RN attributes using biological properties of the input datatypes and various databases, e.g. GO terms for a gene expresession data.</p></li>
+<li><p>Project 2. - Modification of the funMotifs algorithm to improve indetification of the false positive regulatory motifs. We are planning to continue research on the functional annotation of motifs using funMotifs. We would like to extend the functional motifs definition in terms of the conservation of the individual nucleotides in transcription factor motifs.</p></li>
+<li><p>Project 3. on identification and visualization of interdependent genes that discern patients in the case-control studies of autism spectrum disorders by combining multiple, rule-based classifiers.</p></li>
+<li><p>Project 4.- indetification of potential biomarkers that discern glioma subtypes using CFRMs from the COSMIC-available mutations for gliomas. We intersected the results with the differenialy expressed genes based on the TCGA and GTEx databases.</p></li>
+</ul>
 </section>
 <section id="section-1" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2></h2>
