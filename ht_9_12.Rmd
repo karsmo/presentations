@@ -138,7 +138,7 @@ funMotifs was developed by Husen M. Umer and I was mainly working on the framewo
 Two manuscripts were written based on the Project 2.
 
 
-## funMotifs freamwork{data-background-image="images/UU-figures-en-2019copy.jpg"}
+## funMotifs freamwork {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
 <div id="left">
 <b> funMotifs content:</b>
@@ -151,8 +151,9 @@ Two manuscripts were written based on the Project 2.
   - Replication domain,
   - …
   
-<b> Definition of candidate genetic variant:</b> 
-In the tissue(s) relevant for the variant
+<b> Definition of candidate functional regulatory mutations (CFRMs):</b> 
+
+In the tissue(s) relevant for the variant.
 
 - Overlap a TF motif and change entropy by at least |0.3|
 - TF expression > 0
@@ -167,15 +168,54 @@ In the tissue(s) relevant for the variant
 
 </div>
 
-## funMotifs applications {data-background-image="images/UU-figures-en-2019copy.jpg"}
+## Manuscript 1 {data-background-image="images/UU-figures-en-2019copy.jpg"}
+<img class="plain" src="images/funMotifs_paper.png"  align="middle" style="border:1px solid black">
 
-- 1000 Genome project
-- eQTL SNPs were downloaded from the GTEx data portal v7
-- SNPs from GWAS Catalogue 
+<div id="left">
+
+- SNPs and short indels from 1000 Genome project (HU & KS)
+- eQTL SNPs from the GTEx data portal v7 (HU & KS)
+- SNPs from GWAS Catalogue and SNPs in LD with GWAS SNPs ()(KS)
+
+<br><br>
+<h5>HS - Husen M. Umer</h5>
+<h5>KS - Karolina Smolinska</h5>
+</div>
+
+<div id="right">
+<img class="plain" src="images/funmotifs_app.jpg" height="500" align="middle" >
+</div>
+
+## Comparison to existing annotation databases {data-background-image="images/UU-figures-en-2019copy.jpg"}
+
+2,219,330 eQTL SNPs were annotatied using funMotifs, RegulomeDB and HaploReg.
+
+<div id="left">
+```{r, echo =FALSE}
+funMotifs <- c("No", "Yes", "Yes", "Yes")
+RegulomeDB <- c("Yes", "Yes", "Yes", 'No')
+HaploReg <-c("Yes", "No", "Yes", 'No')
+data <- data.frame(funMotifs,RegulomeDB, HaploReg )
+rownames(data) <- c("Genome wide","Functionality score","Functional annotations","Tissue Specificity")
+knitr::kable(data)
+
+```
+</div>
+
+<div id="right">
+
+
+<center><img class="plain" src="images/funmotif_comp.png" height="300"></center>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+RegulomeDB: Boyle,A.P., et al. (2012) 
+
+HaploReg: Ward,L.D., et al. (2016) 
 
 ## Overview of the candidate functional GWAS SNP rs8103622 in breast tissue {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
-<img class="plain" src="images/funmotifs_snp.png" >
+<center><img class="plain" src="images/funmotifs_snp.png" height="800"></center>
 
 ## Pancancer {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
