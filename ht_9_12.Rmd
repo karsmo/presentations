@@ -6,11 +6,12 @@ date: "supervisor: Jan Komorowski <br><br> Upppsala, 2019-12-09"
 output: 
   revealjs::revealjs_presentation:
     self_contained: false
-    template: temp.html
-    theme: simple
     highlight: pygments
     transition: slide
-    center: true
+    css: "hygge.css"
+    center: false
+    fig_width: 7
+    fig_height: 6
     reveal_options:
       slideNumber: true
       controls: false
@@ -29,10 +30,12 @@ library(kableExtra, quietly = TRUE)
 library(VisuNet, quietly = TRUE)
 library(DiagrammeR, quietly = TRUE)
 library(knitr, quietly = TRUE)
+library(cowplot, quietly = TRUE)
 
 ```
 
-## Aims {data-background-image="images/UU-figures-en-2019copy.jpg"}
+## Introduction {data-background-image="images/UU-figures-en-2019copy.jpg" .emphasized}
+<span class="emphasized">Pay attention to this!</span>
 
 <section style="text-align: left;">
 Left-align: This works to align text left on this slide only.
@@ -42,7 +45,7 @@ Left-align: This works to align text left on this slide only.
 
 <img class="plain" src="images/study_schema.jpg" >
 
-## Project 1 {data-background-image="images/UU-figures-en-2019copy.jpg"}
+## Project 1. VisuNet: an interactive tool for network visualization of rule-based models {data-background-image="images/UU-figures-en-2019copy.jpg" .emphasized}
 
 
 
@@ -124,21 +127,67 @@ Top 10%
 ## Project 1 - Summary  {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
 
-## Project 2: The functional annotation of the tissue-specific noncoding mutations  {data-background-image="images/UU-figures-en-2019copy.jpg"}
+## Project 2: funMotifs and the functional annotation of the tissue-specific noncoding mutations {data-background-image="images/UU-figures-en-2019copy.jpg"}
+
+Aims of the project were identification and analysis of significant functional motifs in non coding region of the human genome.
+
+The
+
+funMotifs was developed by Husen M. Umer and I was mainly working on the framework applications.
+
+Two manuscripts were written based on the Project 2.
 
 
-## Future plans {data-background-image="images/UU-figures-en-2019copy.jpg"}
+## funMotifs freamwork{data-background-image="images/UU-figures-en-2019copy.jpg"}
 
-## funMotifs {data-background-image="images/UU-figures-en-2019copy.jpg"}
-<center><img class="plain" src="images/funMotifs_schema.png" height="800" align="middle"></center>
+<div id="left">
+<b> funMotifs content:</b>
+
+- Annotations for motifs of ~500 TFs in 15 tissues
+- Annotations: 
+  - TF peak, 
+  - DNase1 site,
+  - Chromatin state,
+  - Replication domain,
+  - …
+  
+<b> Definition of candidate genetic variant:</b> 
+In the tissue(s) relevant for the variant
+
+- Overlap a TF motif and change entropy by at least |0.3|
+- TF expression > 0
+- DNaseI peak
+- Functionality score > 2.5 or TF-peak
+
+<center><img class="plain" src="images/fun_score.png" height="200" ></center>
+</div>
+
+<div id="right">
+<img class="plain" src="images/funMotifs_schema.png" >
+
+</div>
+
+## funMotifs applications {data-background-image="images/UU-figures-en-2019copy.jpg"}
+
+- 1000 Genome project
+- eQTL SNPs were downloaded from the GTEx data portal v7
+- SNPs from GWAS Catalogue 
+
+## Overview of the candidate functional GWAS SNP rs8103622 in breast tissue {data-background-image="images/UU-figures-en-2019copy.jpg"}
+
+<img class="plain" src="images/funmotifs_snp.png" >
 
 ## Pancancer {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
 <img class="plain" src="images/pancancer_schema.jpg" height="800" align="middle">
+
 ## Project 2 - Summary  {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
 
-Bioinformatician work is to help a life scientist interpret the data.
+
+
+## Future plans {data-background-image="images/UU-figures-en-2019copy.jpg"}
+
 
 ##  {data-background-image="images/UU-figures-en-2019copy.jpg"}
 

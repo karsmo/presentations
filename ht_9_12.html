@@ -11,7 +11,9 @@
   <link rel="stylesheet" href="ht_9_12_files/reveal.js-3.3.0.1/css/reveal.css"/>
 
 
+
 <link rel="stylesheet" href="ht_9_12_files/reveal.js-3.3.0.1/css/theme/simple.css" id="theme">
+
 
   <!-- some tweaks to reveal css -->
   <style type="text/css">
@@ -19,11 +21,14 @@
     .reveal h2 { font-size: 1.5em;  }
     .reveal h3 { font-size: 1.25em;	}
     .reveal h4 { font-size: 1em;	}
-    .reveal h5 { font-size: 0.7em;	}
+
     .reveal .slides>section,
     .reveal .slides>section>section {
       padding: 0px 0px;
     }
+
+
+
     .reveal table {
       border-width: 1px;
       border-spacing: 2px;
@@ -32,6 +37,7 @@
       border-collapse: collapse;
       font-size: 0.7em;
     }
+
     .reveal table th {
       border-width: 1px;
       padding-left: 10px;
@@ -40,6 +46,7 @@
       border-style: dotted;
       border-color: gray;
     }
+
     .reveal table td {
       border-width: 1px;
       padding-left: 10px;
@@ -47,18 +54,27 @@
       border-style: dotted;
       border-color: gray;
     }
+
+
   </style>
+
     <style type="text/css">code{white-space: pre;}</style>
 
+    <link rel="stylesheet" href="hygge.css"/>
 
 <!-- Printing and PDF exports -->
 <script id="paper-css" type="application/dynamic-css">
+
 /* Default Print Stylesheet Template
    by Rob Glazebrook of CSSnewbie.com
    Last Updated: June 4, 2008
+
    Feel free (nay, compelled) to edit, append, and
    manipulate this file as you see fit. */
+
+
 @media print {
+
 	/* SECTION 1: Set default width, margin, float, and
 	   background. This prevents elements from extending
 	   beyond the edge of the printed page, and prevents
@@ -80,6 +96,7 @@
 		overflow: visible;
 		float: none !important;
 	}
+
 	/* SECTION 2: Remove any elements not needed in print.
 	   This would include navigation, ads, sidebars, etc. */
 	.nestedarrow,
@@ -91,6 +108,7 @@
 	.reveal .backgrounds {
 		display: none !important;
 	}
+
 	/* SECTION 3: Set body font face, size, and color.
 	   Consider using a serif font for readability. */
 	body, p, td, li, div {
@@ -98,6 +116,7 @@
 		font-family: Georgia, "Times New Roman", Times, serif !important;
 		color: #000;
 	}
+
 	/* SECTION 4: Set heading font face, sizes, and color.
 	   Differentiate your headings from your body text.
 	   Perhaps use a large sans-serif for distinction. */
@@ -117,6 +136,7 @@
 	h4 { font-size: 22pt !important; font-variant: small-caps; }
 	h5 { font-size: 21pt !important; }
 	h6 { font-size: 20pt !important; font-style: italic; }
+
 	/* SECTION 5: Make hyperlinks more usable.
 	   Ensure links are underlined, and consider appending
 	   the URL to the end of the link for usability. */
@@ -134,6 +154,8 @@
 		font-size: 90%;
 	}
 	*/
+
+
 	/* SECTION 6: more reveal.js specific additions by @skypanther */
 	ul, ol, div, p {
 		visibility: visible;
@@ -161,19 +183,23 @@
 		position: static !important;
 		width: auto !important;
 		height: auto !important;
+
 		left: 0 !important;
 		top: 0 !important;
 		margin-left: 0 !important;
 		margin-top: 0 !important;
 		padding: 0 !important;
 		zoom: 1 !important;
+
 		overflow: visible !important;
 		display: block !important;
+
 		text-align: left !important;
 		-webkit-perspective: none;
 		   -moz-perspective: none;
 		    -ms-perspective: none;
 		        perspective: none;
+
 		-webkit-perspective-origin: 50% 50%;
 		   -moz-perspective-origin: 50% 50%;
 		    -ms-perspective-origin: 50% 50%;
@@ -186,22 +212,28 @@
 		height: auto !important;
 		display: block !important;
 		overflow: visible !important;
+
 		left: 0 !important;
 		top: 0 !important;
 		margin-left: 0 !important;
 		margin-top: 0 !important;
 		padding: 60px 20px !important;
 		z-index: auto !important;
+
 		opacity: 1 !important;
+
 		page-break-after: always !important;
+
 		-webkit-transform-style: flat !important;
 		   -moz-transform-style: flat !important;
 		    -ms-transform-style: flat !important;
 		        transform-style: flat !important;
+
 		-webkit-transform: none !important;
 		   -moz-transform: none !important;
 		    -ms-transform: none !important;
 		        transform: none !important;
+
 		-webkit-transition: none !important;
 		   -moz-transition: none !important;
 		    -ms-transition: none !important;
@@ -216,6 +248,7 @@
 	.reveal section .fragment {
 		opacity: 1 !important;
 		visibility: visible !important;
+
 		-webkit-transform: none !important;
 		   -moz-transform: none !important;
 		    -ms-transform: none !important;
@@ -225,12 +258,14 @@
 		display: block;
 		margin: 15px 0px;
 		background: rgba(255,255,255,1);
-	/*	border: 1px solid #666; */
+		border: 1px solid #666;
 		box-shadow: none;
 	}
+
 	.reveal section small {
 		font-size: 0.8em;
 	}
+
 }  
 </script>
 
@@ -243,9 +278,11 @@
  *
  * https://github.com/hakimel/reveal.js#pdf-export
  */
+
 * {
 	-webkit-print-color-adjust: exact;
 }
+
 body {
 	margin: 0 auto !important;
 	border: 0;
@@ -253,11 +290,13 @@ body {
 	float: none !important;
 	overflow: visible;
 }
+
 html {
 	width: 100%;
 	height: 100%;
 	overflow: visible;
 }
+
 /* Remove any elements not needed in print. */
 .nestedarrow,
 .reveal .controls,
@@ -269,13 +308,16 @@ html {
 .state-background {
 	display: none !important;
 }
+
 h1, h2, h3, h4, h5, h6 {
 	text-shadow: 0 0 0 #000 !important;
 }
+
 .reveal pre code {
 	overflow: hidden !important;
 	font-family: Courier, 'Courier New', monospace !important;
 }
+
 ul, ol, div, p {
 	visibility: visible;
 	position: static;
@@ -294,41 +336,52 @@ ul, ol, div, p {
 	position: static;
 	width: 100%;
 	height: auto;
+
 	left: auto;
 	top: auto;
 	margin: 0 !important;
 	padding: 0 !important;
+
 	overflow: visible;
 	display: block;
+
 	-webkit-perspective: none;
 	   -moz-perspective: none;
 	    -ms-perspective: none;
 	        perspective: none;
+
 	-webkit-perspective-origin: 50% 50%; /* there isn't a none/auto value but 50-50 is the default */
 	   -moz-perspective-origin: 50% 50%;
 	    -ms-perspective-origin: 50% 50%;
 	        perspective-origin: 50% 50%;
 }
+
 .reveal .slides section {
 	page-break-after: always !important;
+
 	visibility: visible !important;
 	position: relative !important;
 	display: block !important;
 	position: relative !important;
+
 	margin: 0 !important;
 	padding: 0 !important;
 	box-sizing: border-box !important;
 	min-height: 1px;
+
 	opacity: 1 !important;
+
 	-webkit-transform-style: flat !important;
 	   -moz-transform-style: flat !important;
 	    -ms-transform-style: flat !important;
 	        transform-style: flat !important;
+
 	-webkit-transform: none !important;
 	   -moz-transform: none !important;
 	    -ms-transform: none !important;
 	        transform: none !important;
 }
+
 .reveal section.stack {
 	margin: 0 !important;
 	padding: 0 !important;
@@ -336,13 +389,16 @@ ul, ol, div, p {
 	height: auto !important;
 	min-height: auto !important;
 }
+
 .reveal img {
 	box-shadow: none;
 }
+
 .reveal .roll {
 	overflow: visible;
 	line-height: 1em;
 }
+
 /* Slide backgrounds are placed inside of their slide when exporting to PDF */
 .reveal section .slide-background {
 	display: block !important;
@@ -352,11 +408,13 @@ ul, ol, div, p {
 	width: 100%;
 	z-index: -1;
 }
+
 /* All elements should be above the slide-background */
 .reveal section>* {
 	position: relative;
 	z-index: 1;
 }
+
 /* Display slide speaker notes when 'showNotes' is enabled */
 .reveal .speaker-notes-pdf {
 	display: block;
@@ -366,12 +424,14 @@ ul, ol, div, p {
 	top: auto;
 	z-index: 100;
 }
+
 /* Display slide numbers when 'slideNumber' is enabled */
 .reveal .slide-number-pdf {
 	display: block;
 	position: absolute;
 	font-size: 14px;
 }
+
 </script>
 
 
@@ -390,25 +450,26 @@ document.getElementsByTagName('head')[0].appendChild(style);
   <div class="reveal">
     <div class="slides">
 
-<section data-background-image="images/UU-figures-en-2019copy.jpg">
+<section>
     <h1 class="title">Untitled</h1>
   <h1 class="subtitle">Half-time presentation</h1>
     <h2 class="author">Karolina Smolinska-Garbulowska</h2>
     <h3 class="date">supervisor: Jan Komorowski <br><br> Upppsala, 2019-12-09</h3>
 </section>
 
-<section id="aims" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
-<h2>Aims</h2>
+<section id="introduction" class="slide level2 emphasized" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>Introduction</h2>
+<p><span class="emphasized">Pay attention to this!</span></p>
 <section style="text-align: left;">
 Left-align: This works to align text left on this slide only.
 </section>
 </section>
 <section id="section" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2></h2>
-<p><img class="plain" src="images/study_schema.jpg" height="350"></p>
+<p><img class="plain" src="images/study_schema.jpg" ></p>
 </section>
-<section id="project-1" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
-<h2>Project 1</h2>
+<section id="project-1.-visunet-an-interactive-tool-for-network-visualization-of-rule-based-models" class="slide level2 emphasized" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>Project 1. VisuNet: an interactive tool for network visualization of rule-based models</h2>
 </section>
 <section id="rule-network-rn-construction" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2>Rule-network (RN) construction</h2>
@@ -671,11 +732,42 @@ KS - Karolina Smolinska
 <section id="project-1---summary" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2>Project 1 - Summary</h2>
 </section>
-<section id="project-2-the-functional-annotation-of-the-tissue-specific-noncoding-mutations" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
-<h2>Project 2: The functional annotation of the tissue-specific noncoding mutations</h2>
+<section id="project-2-funmotifs-and-the-functional-annotation-of-the-tissue-specific-noncoding-mutations" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>Project 2: funMotifs and the functional annotation of the tissue-specific noncoding mutations</h2>
+<p>Aims of the project were identification and analysis of significant functional motifs in non coding region of the human genome.</p>
+<p>The</p>
+<p>funMotifs was developed by Husen M. Umer and I was mainly working on the framework applications.</p>
+<p>Two manuscripts were written based on the Project 2.</p>
 </section>
-<section id="future-plans" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
-<h2>Future plans</h2>
+<section id="funmotifs-freamwork" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>funMotifs freamwork</h2>
+<div id="left">
+<p><b> funMotifs content:</b></p>
+<ul>
+<li>Annotations for motifs of ~500 TFs in 15 tissues</li>
+<li>Annotations:
+<ul>
+<li>TF peak,</li>
+<li>DNase1 site,</li>
+<li>Chromatin state,</li>
+<li>Replication domain,</li>
+<li>…</li>
+</ul></li>
+</ul>
+<p><b> Definition of candidate genetic variant:</b> In the tissue(s) relevant for the variant</p>
+<ul>
+<li>Overlap a TF motif and change entropy by at least |0.3|</li>
+<li>TF expression &gt; 0</li>
+<li>DNaseI peak</li>
+<li>Functionality score &gt; 2.5 or TF-peak</li>
+</ul>
+<center>
+<img class="plain" src="images/fun_score.png" height="200" >
+</center>
+</div>
+<div id="right">
+<p><img class="plain" src="images/funMotifs_schema.png" ></p>
+</div>
 </section>
 <section id="funmotifs" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2>funMotifs</h2>
@@ -683,10 +775,19 @@ KS - Karolina Smolinska
 <img class="plain" src="images/funMotifs_schema.png" height="800" align="middle">
 </center>
 </section>
+<section id="overview-of-the-candidate-functional-gwas-snp-rs8103622-in-breast-tissue" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>Overview of the candidate functional GWAS SNP rs8103622 in breast tissue</h2>
+<p><img class="plain" src="images/funmotifs_snp.png" ></p>
+</section>
 <section id="pancancer" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2>Pancancer</h2>
-<p><img class="plain" src="images/pancancer_schema.jpg" height="800" align="middle"> ## Project 2 - Summary {data-background-image=“images/UU-figures-en-2019copy.jpg”}</p>
-<p>Bioinformatician work is to help a life scientist interpret the data.</p>
+<p><img class="plain" src="images/pancancer_schema.jpg" height="800" align="middle"></p>
+</section>
+<section id="project-2---summary" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>Project 2 - Summary</h2>
+</section>
+<section id="future-plans" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>Future plans</h2>
 </section>
 <section id="section-1" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2></h2>
@@ -740,6 +841,7 @@ KS - Karolina Smolinska
   <script src="ht_9_12_files/reveal.js-3.3.0.1/js/reveal.js"></script>
 
   <script>
+
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
@@ -752,13 +854,16 @@ KS - Karolina Smolinska
         // Enable keyboard shortcuts for navigation
         keyboard: true,
         // Vertical centering of slides
-        center: true,
+        center: false,
         // Enable slide navigation via mouse wheel
         mouseWheel: true,
         // Transition style
         transition: 'slide', // none/fade/slide/convex/concave/zoom
         // Transition style for full page slide backgrounds
         backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+
+
+
         // Optional reveal.js plugins
         dependencies: [
         ]
