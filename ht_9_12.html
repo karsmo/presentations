@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
+  <meta name="author" content="Karolina Smolinska-Garbulowska" />
   <title>Untitled</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -18,6 +19,7 @@
     .reveal h2 { font-size: 1.5em;  }
     .reveal h3 { font-size: 1.25em;	}
     .reveal h4 { font-size: 1em;	}
+    .reveal h5 { font-size: 0.7em;	}
     .reveal .slides>section,
     .reveal .slides>section>section {
       padding: 0px 0px;
@@ -223,7 +225,7 @@
 		display: block;
 		margin: 15px 0px;
 		background: rgba(255,255,255,1);
-		border: 1px solid #666;
+	/*	border: 1px solid #666; */
 		box-shadow: none;
 	}
 	.reveal section small {
@@ -382,9 +384,7 @@ style.innerHTML = style_script;
 document.getElementsByTagName('head')[0].appendChild(style);
 </script>
 
-    <script src="ht_9_12_files/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-    <script src="ht_9_12_files/pymjs-1.3.2/pym.v1.js"></script>
-    <script src="ht_9_12_files/widgetframe-binding-0.3.1/widgetframe.js"></script>
+    <script src="ht_9_12_files/kePrint-0.0.1/kePrint.js"></script>
 </head>
 <body>
   <div class="reveal">
@@ -392,30 +392,346 @@ document.getElementsByTagName('head')[0].appendChild(style);
 
 <section data-background-image="images/UU-figures-en-2019copy.jpg">
     <h1 class="title">Untitled</h1>
+  <h1 class="subtitle">Half-time presentation</h1>
+    <h2 class="author">Karolina Smolinska-Garbulowska</h2>
+    <h3 class="date">supervisor: Jan Komorowski <br><br> Upppsala, 2019-12-09</h3>
 </section>
 
-<section id="r-markdown" class="slide level2">
-<h2>R Markdown</h2>
-<p>This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
-<p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.</p>
+<section id="aims" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>Aims</h2>
+<section style="text-align: left;">
+Left-align: This works to align text left on this slide only.
 </section>
-<section id="slide-with-bullets" class="slide level2">
-<h2>Slide with Bullets</h2>
+</section>
+<section id="section" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2></h2>
+<p><img class="plain" src="images/study_schema.jpg" height="350"></p>
+</section>
+<section id="project-1" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>Project 1</h2>
+</section>
+<section id="rule-network-rn-construction" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>Rule-network (RN) construction</h2>
+<p><img class="plain" src="images/schema.png"></p>
+<p><img class="plain" src="images/Rule-network_contruction2.png"></p>
+</section>
+<section id="visunet" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>VisuNet</h2>
+<p><img class="plain" src="images/VIsuNet_logo2copy.png" height="50"></p>
 <ul>
-<li>Bullet 1</li>
-<li>Bullet 2</li>
-<li>Bullet 3</li>
+<li>an R package</li>
+<li>Publicly available on GitHub: <a href="https://github.com/komorowskilab/VisuNet" class="uri">https://github.com/komorowskilab/VisuNet</a></li>
 </ul>
+<p><img class="plain" src="images/interface.png" height="250"></p>
 </section>
-<section id="slide-with-r-code-and-output" class="slide level2">
-<h2>Slide with R Code and Output</h2>
-<div id="htmlwidget-93c0ad82a5fe2231c19b" style="width:100%;height:576px;" class="widgetframe html-widget"></div>
-<script type="application/json" data-for="htmlwidget-93c0ad82a5fe2231c19b">{"x":{"url":"ht_9_12_files/figure-revealjs//widgets/widget_unnamed-chunk-1.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<section id="data-overview" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>Data overview</h2>
+<table class="table" style="font-size: 13px; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;">
+Dataset
+</th>
+<th style="text-align:center;">
+N.objects
+</th>
+<th style="text-align:center;">
+Decision
+</th>
+<th style="text-align:center;">
+Models
+</th>
+<th style="text-align:center;">
+N.features
+</th>
+<th style="text-align:center;">
+Model.quality
+</th>
+<th style="text-align:center;">
+Visunet.Param
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+Autism (MG)
+</td>
+<td style="text-align:center;width: 10em; ">
+146 patients: 82 autistic and 64 healthy boys
+</td>
+<td style="text-align:center;">
+Autism vs Control
+</td>
+<td style="text-align:center;">
+<ul>
+<li></td>
+<td style="text-align:center;">
+mcfs is running
+</td>
+<td style="text-align:center;">
+<ul>
+<li></td>
+<td style="text-align:center;">
+<ul>
+<li></td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;vertical-align: top !important;" rowspan="4">
+Amara (FB&amp;ZK)
+</td>
+<td style="text-align:center;width: 10em; vertical-align: top !important;" rowspan="4">
+22 rhesus macaque: 10 infected in less than 4 challenges (Early) and 12 infected in more than 6 challenges(Late)
+</td>
+<td style="text-align:center;">
+Early vs Late
+</td>
+<td style="text-align:center;">
+W0
+</td>
+<td style="text-align:center;">
+597
+</td>
+<td style="text-align:center;">
+95%
+</td>
+<td style="text-align:center;">
+Min. accuracy = 80%, min decision coverage =0.6, N top nodes=20
+</td>
+</tr>
+<tr></li>
+</ul></li>
+</ul>
+<td style="text-align:center;">
+Early vs Late
+</td>
+<td style="text-align:center;">
+W16
+</td>
+<td style="text-align:center;">
+1068
+</td>
+<td style="text-align:center;">
+100%
+</td>
+<td style="text-align:center;">
+”
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Early vs Late
+</td>
+<td style="text-align:center;">
+W32
+</td>
+<td style="text-align:center;">
+723
+</td>
+<td style="text-align:center;">
+100%
+</td>
+<td style="text-align:center;">
+”
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Early vs Late
+</td>
+<td style="text-align:center;">
+C1
+</td>
+<td style="text-align:center;">
+448
+</td>
+<td style="text-align:center;">
+95%
+</td>
+<td style="text-align:center;">
+”
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+ULSAM (KD)
+</td>
+<td style="text-align:center;width: 10em; ">
+963 patients: 134 T2D and 829 ND
+</td>
+<td style="text-align:center;">
+ND (non-diabetes) vs T2D (type 2 diabetes)
+</td>
+<td style="text-align:center;">
+<ul>
+<li></td>
+<td style="text-align:center;">
+19
+</td>
+<td style="text-align:center;">
+67%
+</td>
+<td style="text-align:center;">
+<ul>
+<li></td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;vertical-align: top !important;" rowspan="3">
+Synthetic data (KS)
+</td>
+<td style="text-align:center;width: 10em; vertical-align: top !important;" rowspan="3">
+120 obejcts: 60 D1 and 60 D2
+</td>
+<td style="text-align:center;">
+D1 vs D2
+</td>
+<td style="text-align:center;">
+weak correlation (0.2-0.5)
+</td>
+<td style="text-align:center;">
+18
+</td>
+<td style="text-align:center;">
+59%
+</td>
+<td style="text-align:center;">
+<ul>
+<li></td>
+</tr>
+<tr></li>
+</ul></li>
+</ul></li>
+</ul>
+<td style="text-align:center;">
+D1 vs D2
+</td>
+<td style="text-align:center;">
+medium correlation (0.2-0.7)
+</td>
+<td style="text-align:center;">
+18
+</td>
+<td style="text-align:center;">
+76%
+</td>
+<td style="text-align:center;">
+<ul>
+<li></td>
+</tr>
+<tr></li>
+</ul>
+<td style="text-align:center;">
+D1 vs D2
+</td>
+<td style="text-align:center;">
+strong correlation (0.5 -0.9)
+</td>
+<td style="text-align:center;">
+18
+</td>
+<td style="text-align:center;">
+93%
+</td>
+<td style="text-align:center;">
+<ul>
+<li></td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+</ul>
+<h5>
+<p align="left">
+MG - Mateusz Garbulowski
+</p>
+</h5>
+<h5>
+<p align="left">
+FB&amp;ZK - Fredrik Barrenäs &amp; Zeeshan Khaliq
+</p>
+</h5>
+<h5>
+<p align="left">
+KD - Klev Diamanti
+</p>
+</h5>
+<h5>
+<p align="left">
+KS - Karolina Smolinska
+</p>
+</h5>
 </section>
-<section id="slide-with-plot" class="slide level2">
-<h2>Slide with Plot</h2>
-<iframe src="net.html" style="height:500px;width:700px">
-</iframe>
+<section id="case-control-studies-of-autism-spectrum-disorders---sample-rn" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>Case-control studies of autism spectrum disorders - sample RN</h2>
+<p>Top 10% <iframe src='net.html' style='height:500px;width:700px'></iframe></p>
+</section>
+<section id="map7-and-cox2-interdependecies" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>MAP7 and COX2 interdependecies</h2>
+</section>
+<section id="project-1---summary" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>Project 1 - Summary</h2>
+</section>
+<section id="project-2-the-functional-annotation-of-the-tissue-specific-noncoding-mutations" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>Project 2: The functional annotation of the tissue-specific noncoding mutations</h2>
+</section>
+<section id="future-plans" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>Future plans</h2>
+</section>
+<section id="funmotifs" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>funMotifs</h2>
+<center>
+<img class="plain" src="images/funMotifs_schema.png" height="800" align="middle">
+</center>
+</section>
+<section id="pancancer" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>Pancancer</h2>
+<p><img class="plain" src="images/pancancer_schema.jpg" height="800" align="middle"> ## Project 2 - Summary {data-background-image=“images/UU-figures-en-2019copy.jpg”}</p>
+<p>Bioinformatician work is to help a life scientist interpret the data.</p>
+</section>
+<section id="section-1" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2></h2>
+<h5>
+<p><strong>Publications: </strong></p>
+<ol type="1">
+<li><p>Husen M. Umer, <strong>Karolina Smolinska-Garbulowska</strong>, Nour-al-dain Marzouka, Zeeshan Khaliq, Claes Wadelius, Jan Komorowski, funMotifs: Tissue-specific transcription factor motifs, 2019, bioRxiv 683722; doi: <a href="https://doi.org/10.1101/683722" class="uri">https://doi.org/10.1101/683722</a> (subbmited)</p></li>
+<li><p>Husen M. Umer, <strong>Karolina Smolinska-Garbulowska</strong>, Jan Komorowski, Claes Wadelius, Functional annotation of noncoding mutations in cancer, 2019(manuscript)</p></li>
+<li><p>Marco Cavalli, Nicholas Baltzer, Gang Pan, José Ramón Bárcenas Walls, <strong>Karolina Smolinska Garbulowska</strong>, Chanchal Kumar, Stanko Skrtic, Jan Komorowski, and Claes Wadelius. Studies of liver tissue identifies functional gene regulatory elements associated to gene expression, type 2 diabetes and other metabolic diseases, Human genomics 13, no. 1 (2019): 20</p></li>
+<li><p>Mateusz Garbulowski, Klev Diamanti, <strong>Karolina Smolinska-Garbulowska</strong>, Patricia Stoll, Susanne Bornelöv, Aleksander Øhrn, Jan Komorowski, (2019), R.ROSETTA: a package for analysis of rule-based classification models, bioRxiv 625905; doi: <a href="https://doi.org/10.1101/625905" class="uri">https://doi.org/10.1101/625905</a> These authors contributed equally to the work as second authors.</p>
+</h5></li>
+</ol>
+</section>
+<section id="section-2" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2></h2>
+<h5>
+<p><strong>Posters:</strong></p>
+<ol type="1">
+<li>Michal J. Dabrowski, Michal Draminski, Klev Diamanti, Mateusz Garbulowski, <strong>Karolina Smolinska</strong>, Jacek Koronacki, Jan Komorowski. Identification of the boundary between common and ancestry-dependent levels of gene expression of Homo sapiens adaptive immune system. Systems Biology: Networks, Cold Spring Harbor Laboratory, Cold Spring Harbor, USA 14-18 March 2017.</li>
+<li>Mateusz Garbulowski, <strong>Karolina Smolinska</strong>, Klev Diamanti, Patricia Stoll, Zeeshan Khaliq, Sara Younes, Behrooz Torabi, Susanne Bornelöv, Jan Komorowski. RROSETTA: a toolkit for creating rough set models. Swedish Bioinformatics Workshop 2017, Uppsala, Sweden, 13-14 November 2017.</li>
+<li>Mateusz Garbulowski, <strong>Karolina Smolinska</strong>, Klev Diamanti, Patricia Stoll, Zeeshan Khaliq, Sara Younes, Behrooz Torabi, Susanne Bornelöv, Jan Komorowski. RROSETTA: a toolkit for creating rough set models. Swedish Epigenetics and Chromatin Meeting, EpiChrom 2017, Uppsala, Sweden, 30 November - 1 December 2017.</li>
+<li><strong>Karolina Smolinska-Garbulowska</strong>, Steven O. O. Anyango, Jan Komorowski, VisuNet: an interactive tool for rule network visualization of rule-based models, SciLifeLab Science Summit 2019, Artificial Intelligence for Life Sciences, Uppsala, May 15, 2019</li>
+</ol>
+<p><strong>Presentation: </strong></p>
+<ol type="1">
+<li><strong>Karolina Smolinska-Garbulowska</strong>, VisuNet: an interactive tool for rule network visualization of rule-based models, the awarded Flash Talk, SciLifeLab Science Summit 2019, Artificial Intelligence for Life Sciences, Uppsala, May 15, 2019</li>
+</ol>
+</h5>
+</section>
+<section id="acknowledgements" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>Acknowledgements</h2>
+<style type="text/css">
+  .reveal p {
+    text-align: left;
+  }
+  .reveal ul {
+    display: block;
+  }
+  .reveal ol {
+    display: block;
+  }  
+</style>
+<p>Jan Komorowski Laboratory</p>
+<p>Claes Wadelius Laboratory</p>
+<p>Manfred Grabherr</p>
 </section>
     </div>
   </div>
@@ -427,12 +743,20 @@ document.getElementsByTagName('head')[0].appendChild(style);
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: false,
+        // Display the page number of the current slide
+        slideNumber: true,
         // Push each slide change to the browser history
         history: true,
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
         // Vertical centering of slides
-        center: false,
+        center: true,
+        // Enable slide navigation via mouse wheel
+        mouseWheel: true,
         // Transition style
-        transition: 'default', // none/fade/slide/convex/concave/zoom
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
         // Transition style for full page slide backgrounds
         backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
         // Optional reveal.js plugins
