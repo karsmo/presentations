@@ -1,5 +1,5 @@
 ---
-title: "Bioinformatics tools to analysis complex diseases"
+title: "Bioinformatics tools to analyse complex diseases"
 subtitle: "Half-time presentation"
 author: "Karolina Smolinska-Garbulowska"
 date: "supervisor: Jan Komorowski <br><br> Upppsala, 2019-12-09"
@@ -34,14 +34,24 @@ library(cowplot, quietly = TRUE)
 
 ```
 
+
+
+<script>
+var link = document.createElement( 'link' );
+	link.rel = 'stylesheet';
+	link.type = 'text/css';
+	link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+	document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
 ## Introduction {data-background-image="images/UU-figures-en-2019copy.jpg" .emphasized}
 
 Uncovering explainability for the complex health-related problems is a crucial task.
 
-Large number of available data complicate the process of discovery the most informative features for the biological outcomes.
-We focused on developing methodologies that support that process and as the results VisuNet and funMotifs were developed.
+Large number of available data complicates the process of discovery the most informative features for the biological outcomes.
 
-The main aim of my projects was to extend the methods and apply them to large-scale experiments created for complex diseases, e.g. autism, cancer.
+We focused on developing methodologies that support the discovery process and as the results VisuNet and funMotifs were developed.
+
+The main aim of my projects was to extend the methods and apply them to large-scale experiments created for complex diseases, e.g. autism and cancer.
 
 
 <br><br><br><br>
@@ -65,7 +75,7 @@ Explainability:
 ## Rule-network (RN) construction {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
 
-Interactions are discovered from transparent classifiers, such as rule-based classifiers (RBC). 
+Interactions are discovered from transparent classifiers, such as rule-based classifiers (RBCs). 
 
 <img class="plain" src="images/Rule-network_contruction2.png">
 
@@ -106,14 +116,14 @@ collapse_rows_dt <- data.frame(Dataset = c(paste0(rep("Autism (MG)", 1),footnote
                                                rep("metabolite levels", 1),
                                                rep("features correlated within each other and with the decision in the interval 0.1-1", 1)),
                                `N objects` = c(c('146 patients: 82 autistic and 64 healthy boys'),
-                                              rep('22 rhesus macaque:\n 10 infected in less than 4 challenges (Early) and 12 infected in more than 6 challenges (Late)', 4),
+                                              rep('22 Rhesus macaques:\n 10 infected in less than 4 challenges (Early) and 12 infected in more than 6 challenges (Late) with SIV after vaccination', 4),
                                               c('963 patients: 134 type 2 diabetes (T2D) and 829 non-diabetes (ND)'),
                                               rep("500 objects: 250 D1 and 250 D2",1)
                                  
                                ),
                                Decision = c(rep("Autism vs Control", 1), 
                                            rep("Early vs Late", 4),
-                                           rep("ND (non-diabetes) vs T2D (type 2 diabetes)", 1),
+                                           rep("ND vs T2D", 1),
                                            rep("D1 vs D2",1)),
                               Models =c( c("-"),
                               c("W0", "W16", "W32", "C1"),
@@ -137,7 +147,7 @@ kable(collapse_rows_dt, format = 'html', align = rep("c",7),escape = F, col.name
                            "Decision",
                            "Models",
                            "#features",
-                           "Model quality")) %>%
+                           "Rule-based model quality")) %>%
   kable_styling(full_width = F, font_size = 13,position = "center") %>%
   column_spec(1, bold = T) %>%
   column_spec(2, width = "10em") %>% 
@@ -153,7 +163,7 @@ kable(collapse_rows_dt, format = 'html', align = rep("c",7),escape = F, col.name
 
 
 
-
+<br><br>
 <h5><p align="left">MG - Mateusz Garbulowski</p></h5>
 <h5><p align="left">FB&ZK - Fredrik Barrenäs & Zeeshan Khaliq</p></h5>
 <h5><p align="left">KD - Klev Diamanti</p></h5>
@@ -194,11 +204,11 @@ RN may suggest a link between embryonic development events and anxiety behaviour
 
 ## Project 1 - Summary  {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
-- VisuNet is conceptually simple, but useful for the interdependencies discovery in RBCs,
+- VisuNet is conceptually simple, but useful for discovery the interdependencies  in RBCs,
 - RN identifies different combinations of features and their discretisation levels that are associated with decisions,
 - RN helps explain the differences between the classes,
-- In the autism-control RN confirms some known genes associated with autism,
-- RN may suggest a new functionality for other of the attributes, e.g. MAP7 and CAPS2
+- The autism-control RN confirms some known genes associated with autism,
+- RN may suggest a new functionality for other attributes, e.g. MAP7 and CAPS2
 
 
 The manuscript will be finished by the end of this year.
@@ -206,7 +216,7 @@ The manuscript will be finished by the end of this year.
 ## Project 2: funMotifs and the functional annotation of the tissue-specific noncoding mutations {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
 The gene expression is regulated by transcription factors (TFs) through binding to TF biding sites (motifs).  
-To understand how the genes as regulate, we need to know what determined functionality of TF motifs. 
+To understand how the genes are regulate, we need to know what determined functionality of TF motifs. 
 
 We incorporated data from large-scale genomics platforms including ENCODE, RoadMap Epigenomics and FANTOM to characterize the tissue-specific functional TF motifs.
 
@@ -214,6 +224,10 @@ As the results funMotifs was developed by Husen M. Umer.
 I was mainly working on the framework applications.
 
 Two manuscripts were written based on the Project 2.
+
+## Manuscript 1 {data-background-image="images/UU-figures-en-2019copy.jpg"}
+<br><br><br>
+<center><img class="plain" src="images/funMotifs_paper.png"  align="middle" style="border:1px solid black"><center>
 
 
 ## funMotifs framework {data-background-image="images/UU-figures-en-2019copy.jpg"}
@@ -238,7 +252,6 @@ In the tissue(s) relevant for the variant.
 - DNaseI peak
 - Functionality score > 2.5 or TF-peak
 
-<center><img class="plain" src="images/fun_score.png" height="160" ></center>
 </div>
 
 <div id="right">
@@ -246,24 +259,32 @@ In the tissue(s) relevant for the variant.
 
 </div>
 
-## Manuscript 1 {data-background-image="images/UU-figures-en-2019copy.jpg"}
-<center><img class="plain" src="images/funMotifs_paper.png"  align="middle" style="border:1px solid black"><center>
+## CFRMs distribution {data-background-image="images/UU-figures-en-2019copy.jpg"}
+
+<center><img class="plain" src="images/mut_ov.png" style="max-width:105%;"><center>
+
+
+
+## Applications {data-background-image="images/UU-figures-en-2019copy.jpg"}
+
 
 <div id="left">
-<b>Applications:</b>
+
 
 - SNPs and short indels from 1000 Genome project (HU & KS)
 - eQTL SNPs from the GTEx data portal v7 (HU & KS)
 - SNPs from GWAS Catalogue and SNPs in LD with GWAS SNPs (r>0.8)(KS)
 
-<br><br>
-<h5>HS - Husen M. Umer</h5>
-<h5>KS - Karolina Smolinska</h5>
+
 </div>
 
 <div id="right">
 <img class="plain" src="images/funmotifs_app.png" height="450" align="middle" >
 </div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<h5><p align="left">HS - Husen M. Umer</p></h5>
+<h5><p align="left">KS - Karolina Smolinska</p></h5>
 
 ## Comparison to existing annotation databases {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
@@ -302,14 +323,16 @@ HaploReg: Ward,L.D., et al. (2016)
 
 Functional annotation of mutations in the Pan Cancer Analysis of Whole Genomes consortium data for 2,500 cancer genomes in 37 cancer types.
 
-We identified 
+<b>Results</b>
 
+Using the funMotifs framework we identified 121,029 CFRMs overlapped 217,075 potentially functional motifs across the 44 cohorts. 
+Many CFRMs were found in genes that were previously linked with cancer.
 
 ## Overview of mutations {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
 <center><img class="plain" src="images/data_overwiev.png" ></center>
 
-## Pancancer {data-background-image="images/UU-figures-en-2019copy.jpg"}
+## Workflow {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
 <center><img class="plain" src="images/pancancer_schema.png" height="650" align="middle"></center>
 
@@ -317,15 +340,19 @@ We identified
 
 <center><img class="plain" src="images/cebp.png" height="500"></center>
 
-The active motifs of CEBPB are significantly less methylated genome-wide than inactive motifs and still there is an abundance of mutations at this site (P-value < 1e-50)
+The active motifs of CEBPB are significantly less methylated genome-wide than inactive motifs and still there is an abundance of mutations at this site (P-value < 1e-50).
 
 ## Highly recurrent mutated regulatory elements {data-background-image="images/UU-figures-en-2019copy.jpg"}
+
+<center><img class="plain" src="images/Myc.png" height="500"></center>
 
 
 ## Project 2 - Summary  {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
-- Characterization of the noncoding regions of genome is important to understand mechanisms that lead to complex diseases,
-- Functional annotations help identify regulatory mutations that may significantly regulate gene expression in cancer and other complex diseases
+- Characterization of the noncoding regions of human genome is important to understand mechanisms that lead to complex diseases,
+- Functional annotations help to identify regulatory mutations that may significantly deregulate gene expression in cancer and other complex diseases,
+- funMotifs applications identified potentially functional variants in cancer and normal genomes,
+- Experimenatal validation may be perfomerd on the CFRMs to confirm our findings
 
 
 funMotifs was implemented as a command-line pipeline (https://github.com/komorowskilab/funMotifs) and a web-based interface: http://bioinf.icm.uu.se/funmotifs.
@@ -336,11 +363,11 @@ funMotifs was implemented as a command-line pipeline (https://github.com/komorow
 
 - Project 1.  - implement the possibility to annotate the RN attributes using biological properties of the input datatypes and various databases, e.g. GO terms for a gene expression data. 
 
-- Project 2. - Modification of the funMotifs algorithm to improve identification of the false positive regulatory motifs. We are planning to continue research on the functional annotation of motifs using funMotifs. We would like to extend the functional motifs definition in terms of the conservation of the individual nucleotides in transcription factor motifs.  
+- Project 2. - modification of the funMotifs algorithm to improve identification of the false positive regulatory motifs. We are planning to continue research on the functional annotation of motifs using funMotifs. We would like to extend the functional motifs definition in terms of the conservation of the individual nucleotides in TF motifs across various diseases.   
 
-- Project 3. on identification and visualization of interdependent genes that discern patients in the case-control studies of autism spectrum disorders by combining multiple, rule-based classifiers. 
+- Project 3. - identification and visualization of interdependent genes that discern patients in the case-control studies of autism spectrum disorders by combining multiple, rule-based classifiers. 
 
-- Project 4.- identification of potential biomarkers that discern glioma subtypes using CFRMs from the COSMIC-available mutations for gliomas. We intersected the results with the differentially expressed genes based on the TCGA and GTEx databases.
+- Project 4. - identification of potential biomarkers that discern glioma subtypes using CFRMs from the COSMIC-available mutations for gliomas. We intersected the results with the differentially expressed genes based on the TCGA and GTEx databases.
 
 ##  {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
@@ -375,22 +402,21 @@ These authors contributed equally to the work as second authors. </h5>
 
 ## Acknowledgements {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
-<style type="text/css">
-  .reveal p {
-    text-align: left;
-  }
-  .reveal ul {
-    display: block;
-  }
-  .reveal ol {
-    display: block;
-  }  
-</style>
 
+<div id="left">
+<img class="plain" src="images/group.png" style="max-width:100%;" align="middle" >
 
+</div>
+
+<div id="right">
 Jan Komorowski Laboratory
 
 Claes Wadelius Laboratory
 
 Manfred Grabherr
+
+</div>
+
+
+
 

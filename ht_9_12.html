@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Karolina Smolinska-Garbulowska" />
-  <title>Untitled</title>
+  <title>Bioinformatics tools to analyse complex diseases</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -451,17 +451,28 @@ document.getElementsByTagName('head')[0].appendChild(style);
     <div class="slides">
 
 <section>
-    <h1 class="title">Untitled</h1>
+    <h1 class="title">Bioinformatics tools to analyse complex diseases</h1>
   <h1 class="subtitle">Half-time presentation</h1>
     <h2 class="author">Karolina Smolinska-Garbulowska</h2>
     <h3 class="date">supervisor: Jan Komorowski <br><br> Upppsala, 2019-12-09</h3>
 </section>
 
+<section class="slide level2">
+
+<script>
+var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+</section>
 <section id="introduction" class="slide level2 emphasized" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2>Introduction</h2>
 <p>Uncovering explainability for the complex health-related problems is a crucial task.</p>
-<p>Large number of available data complicate the process of discovery the most informative features for the biological outcomes. We focused on developing methodologies that support that process and as the results VisuNet and funMotifs were developed.</p>
-<p>The main aim of my projects was to extend the methods and apply them to large-scale experiments created for complex diseases, e.g. autism, cancer.</p>
+<p>Large number of available data complicates the process of discovery the most informative features for the biological outcomes.</p>
+<p>We focused on developing methodologies that support the discovery process and as the results VisuNet and funMotifs were developed.</p>
+<p>The main aim of my projects was to extend the methods and apply them to large-scale experiments created for complex diseases, e.g. autism and cancer.</p>
 <p><br><br><br><br> <img class="plain" src="images/study_schema.png" ></p>
 </section>
 <section id="project-1.-visunet-an-interactive-tool-for-network-visualization-of-rule-based-models" class="slide level2 emphasized" data-background-image="images/UU-figures-en-2019copy.jpg">
@@ -478,7 +489,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 </section>
 <section id="rule-network-rn-construction" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2>Rule-network (RN) construction</h2>
-<p>Interactions are discovered from transparent classifiers, such as rule-based classifiers (RBC).</p>
+<p>Interactions are discovered from transparent classifiers, such as rule-based classifiers (RBCs).</p>
 <p><img class="plain" src="images/Rule-network_contruction2.png"></p>
 <p><br><br> The conjuncts are co-predictive of the decision.</p>
 <p>Nodes - conjuncts in rules, i.e. features with their values occurring in the rules</p>
@@ -525,7 +536,7 @@ Models
 #features
 </th>
 <th style="text-align:center;">
-Model quality
+Rule-based model quality
 </th>
 </tr>
 </thead>
@@ -561,7 +572,7 @@ SIV (FB&amp;ZK)<sup>2</sup>
 gene expression
 </td>
 <td style="text-align:center;vertical-align: middle !important;" rowspan="4">
-22 rhesus macaque: 10 infected in less than 4 challenges (Early) and 12 infected in more than 6 challenges (Late)
+22 Rhesus macaques: 10 infected in less than 4 challenges (Early) and 12 infected in more than 6 challenges (Late) with SIV after vaccination
 </td>
 <td style="text-align:center;vertical-align: middle !important;" rowspan="4">
 Early vs Late
@@ -620,7 +631,7 @@ metabolite levels
 963 patients: 134 type 2 diabetes (T2D) and 829 non-diabetes (ND)
 </td>
 <td style="text-align:center;">
-ND (non-diabetes) vs T2D (type 2 diabetes)
+ND vs T2D
 </td>
 <td style="text-align:center;">
 <ul>
@@ -691,6 +702,7 @@ from 48% to 100%
 </table></li>
 </ul></li>
 </ul>
+<br><br>
 <h5>
 <p align="left">
 MG - Mateusz Garbulowski
@@ -742,21 +754,28 @@ KS - Karolina Smolinska
 <section id="project-1---summary" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2>Project 1 - Summary</h2>
 <ul>
-<li>VisuNet is conceptually simple, but useful for the interdependencies discovery in RBCs,</li>
+<li>VisuNet is conceptually simple, but useful for discovery the interdependencies in RBCs,</li>
 <li>RN identifies different combinations of features and their discretisation levels that are associated with decisions,</li>
 <li>RN helps explain the differences between the classes,</li>
-<li>In the autism-control RN confirms some known genes associated with autism,</li>
-<li>RN may suggest a new functionality for other of the attributes, e.g. MAP7 and CAPS2</li>
+<li>The autism-control RN confirms some known genes associated with autism,</li>
+<li>RN may suggest a new functionality for other attributes, e.g. MAP7 and CAPS2</li>
 </ul>
 <p>The manuscript will be finished by the end of this year.</p>
 </section>
 <section id="project-2-funmotifs-and-the-functional-annotation-of-the-tissue-specific-noncoding-mutations" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2>Project 2: funMotifs and the functional annotation of the tissue-specific noncoding mutations</h2>
 <p>The gene expression is regulated by transcription factors (TFs) through binding to TF biding sites (motifs).<br />
-To understand how the genes as regulate, we need to know what determined functionality of TF motifs.</p>
+To understand how the genes are regulate, we need to know what determined functionality of TF motifs.</p>
 <p>We incorporated data from large-scale genomics platforms including ENCODE, RoadMap Epigenomics and FANTOM to characterize the tissue-specific functional TF motifs.</p>
 <p>As the results funMotifs was developed by Husen M. Umer. I was mainly working on the framework applications.</p>
 <p>Two manuscripts were written based on the Project 2.</p>
+</section>
+<section id="manuscript-1" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>Manuscript 1</h2>
+<br><br><br>
+<center>
+<img class="plain" src="images/funMotifs_paper.png"  align="middle" style="border:1px solid black">
+<center>
 </section>
 <section id="funmotifs-framework" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2>funMotifs framework</h2>
@@ -781,37 +800,40 @@ To understand how the genes as regulate, we need to know what determined functio
 <li>DNaseI peak</li>
 <li>Functionality score &gt; 2.5 or TF-peak</li>
 </ul>
-<center>
-<img class="plain" src="images/fun_score.png" height="160" >
-</center>
 </div>
 <div id="right">
 <p><img class="plain" src="images/funMotifs_schema.png" ></p>
 </div>
 </section>
-<section id="manuscript-1" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
-<h2>Manuscript 1</h2>
+<section id="cfrms-distribution" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>CFRMs distribution</h2>
 <center>
-<img class="plain" src="images/funMotifs_paper.png"  align="middle" style="border:1px solid black">
+<img class="plain" src="images/mut_ov.png" style="max-width:105%;">
 <center>
+</section>
+<section id="applications-1" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>Applications</h2>
 <div id="left">
-<p><b>Applications:</b></p>
 <ul>
 <li>SNPs and short indels from 1000 Genome project (HU &amp; KS)</li>
 <li>eQTL SNPs from the GTEx data portal v7 (HU &amp; KS)</li>
 <li>SNPs from GWAS Catalogue and SNPs in LD with GWAS SNPs (r&gt;0.8)(KS)</li>
 </ul>
-<br><br>
-<h5>
-HS - Husen M. Umer
-</h5>
-<h5>
-KS - Karolina Smolinska
-</h5>
 </div>
 <div id="right">
 <p><img class="plain" src="images/funmotifs_app.png" height="450" align="middle" ></p>
 </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<h5>
+<p align="left">
+HS - Husen M. Umer
+</p>
+</h5>
+<h5>
+<p align="left">
+KS - Karolina Smolinska
+</p>
+</h5>
 </section>
 <section id="comparison-to-existing-annotation-databases" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2>Comparison to existing annotation databases</h2>
@@ -914,7 +936,8 @@ No
 </center>
 <p><b>The aim of the study</b></p>
 <p>Functional annotation of mutations in the Pan Cancer Analysis of Whole Genomes consortium data for 2,500 cancer genomes in 37 cancer types.</p>
-<p>We identified</p>
+<p><b>Results</b></p>
+<p>Using the funMotifs framework we identified 121,029 CFRMs overlapped 217,075 potentially functional motifs across the 44 cohorts. Many CFRMs were found in genes that were previously linked with cancer.</p>
 </section>
 <section id="overview-of-mutations" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2>Overview of mutations</h2>
@@ -922,8 +945,8 @@ No
 <img class="plain" src="images/data_overwiev.png" >
 </center>
 </section>
-<section id="pancancer" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
-<h2>Pancancer</h2>
+<section id="workflow" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>Workflow</h2>
 <center>
 <img class="plain" src="images/pancancer_schema.png" height="650" align="middle">
 </center>
@@ -933,13 +956,21 @@ No
 <center>
 <img class="plain" src="images/cebp.png" height="500">
 </center>
-<p>The active motifs of CEBPB are significantly less methylated genome-wide than inactive motifs and still there is an abundance of mutations at this site (P-value &lt; 1e-50) ## Mutated regulatory elements {data-background-image=“images/UU-figures-en-2019copy.jpg”}</p>
+<p>The active motifs of CEBPB are significantly less methylated genome-wide than inactive motifs and still there is an abundance of mutations at this site (P-value &lt; 1e-50).</p>
+</section>
+<section id="highly-recurrent-mutated-regulatory-elements" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>Highly recurrent mutated regulatory elements</h2>
+<center>
+<img class="plain" src="images/Myc.png" height="500">
+</center>
 </section>
 <section id="project-2---summary" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2>Project 2 - Summary</h2>
 <ul>
-<li>Characterization of the noncoding regions of genome is important to understand mechanisms that lead to complex diseases,</li>
-<li>Functional annotations help identify regulatory mutations that may significantly regulate gene expression in cancer and other complex diseases</li>
+<li>Characterization of the noncoding regions of human genome is important to understand mechanisms that lead to complex diseases,</li>
+<li>Functional annotations help to identify regulatory mutations that may significantly deregulate gene expression in cancer and other complex diseases,</li>
+<li>funMotifs applications identified potentially functional variants in cancer and normal genomes,</li>
+<li>Experimenatal validation may be perfomerd on the CFRMs to confirm our findings</li>
 </ul>
 <p>funMotifs was implemented as a command-line pipeline (<a href="https://github.com/komorowskilab/funMotifs" class="uri">https://github.com/komorowskilab/funMotifs</a>) and a web-based interface: <a href="http://bioinf.icm.uu.se/funmotifs" class="uri">http://bioinf.icm.uu.se/funmotifs</a>.</p>
 </section>
@@ -947,9 +978,9 @@ No
 <h2>Future plans</h2>
 <ul>
 <li><p>Project 1. - implement the possibility to annotate the RN attributes using biological properties of the input datatypes and various databases, e.g. GO terms for a gene expression data.</p></li>
-<li><p>Project 2. - Modification of the funMotifs algorithm to improve identification of the false positive regulatory motifs. We are planning to continue research on the functional annotation of motifs using funMotifs. We would like to extend the functional motifs definition in terms of the conservation of the individual nucleotides in transcription factor motifs.</p></li>
-<li><p>Project 3. on identification and visualization of interdependent genes that discern patients in the case-control studies of autism spectrum disorders by combining multiple, rule-based classifiers.</p></li>
-<li><p>Project 4.- identification of potential biomarkers that discern glioma subtypes using CFRMs from the COSMIC-available mutations for gliomas. We intersected the results with the differentially expressed genes based on the TCGA and GTEx databases.</p></li>
+<li><p>Project 2. - modification of the funMotifs algorithm to improve identification of the false positive regulatory motifs. We are planning to continue research on the functional annotation of motifs using funMotifs. We would like to extend the functional motifs definition in terms of the conservation of the individual nucleotides in TF motifs across various diseases.</p></li>
+<li><p>Project 3. - identification and visualization of interdependent genes that discern patients in the case-control studies of autism spectrum disorders by combining multiple, rule-based classifiers.</p></li>
+<li><p>Project 4. - identification of potential biomarkers that discern glioma subtypes using CFRMs from the COSMIC-available mutations for gliomas. We intersected the results with the differentially expressed genes based on the TCGA and GTEx databases.</p></li>
 </ul>
 </section>
 <section id="section" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
@@ -982,20 +1013,14 @@ No
 </section>
 <section id="acknowledgements" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2>Acknowledgements</h2>
-<style type="text/css">
-  .reveal p {
-    text-align: left;
-  }
-  .reveal ul {
-    display: block;
-  }
-  .reveal ol {
-    display: block;
-  }  
-</style>
+<div id="left">
+<p><img class="plain" src="images/group.png" style="max-width:100%;" align="middle" ></p>
+</div>
+<div id="right">
 <p>Jan Komorowski Laboratory</p>
 <p>Claes Wadelius Laboratory</p>
 <p>Manfred Grabherr</p>
+</div>
 </section>
     </div>
   </div>

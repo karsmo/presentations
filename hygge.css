@@ -36,7 +36,10 @@ body {
 .reveal .slides section,
 .reveal .slides section > section {
   line-height: 1.3;
-  font-weight: inherit; }
+  font-weight: inherit;
+  text-align: left;}
+  
+
 
 /*********************************************
  * HEADERS
@@ -181,7 +184,7 @@ body {
 
 .reveal table th[align="center"],
 .reveal table td[align="center"] {
-  text-align: center; }
+  text-align: left; }
 
 .reveal table th[align="right"],
 .reveal table td[align="right"] {
@@ -280,7 +283,7 @@ body {
 	text-align: left;
 	float: left;
 	z-index:-10;
-	width:40%;
+	width:48%;
 	font-size: 0.85em;
 	line-height: 1.5; 
 }
@@ -290,7 +293,7 @@ body {
 	float: right;
 	text-align: left;
 	z-index:-10;
-	width:50%;
+	width:48%;
 	font-size: 0.85em;
 	line-height: 1.5; 
 }
