@@ -457,16 +457,6 @@ document.getElementsByTagName('head')[0].appendChild(style);
     <h3 class="date">supervisor: Jan Komorowski <br><br> Upppsala, 2019-12-09</h3>
 </section>
 
-<section class="slide level2">
-
-<script>
-var link = document.createElement( 'link' );
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-    document.getElementsByTagName( 'head' )[0].appendChild( link );
-</script>
-</section>
 <section id="introduction" class="slide level2 emphasized" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2>Introduction</h2>
 <p>Uncovering explainability for the complex health-related problems is a crucial task.</p>
@@ -481,16 +471,16 @@ var link = document.createElement( 'link' );
 <p><img class="plain" src="images/schema.png"></p>
 <p>Explainability:</p>
 <ul>
-<li>What combinations of genes/variables contribute to classification?</li>
+<li>What interdependencies of genes/variables contribute to classification?</li>
 <li>What variables/genes are more important?</li>
 </ul>
 </section>
 <section id="rule-network-rn-construction" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2>Rule-network (RN) construction</h2>
-<p>Interactions are discovered from transparent classifiers, such as rule-based classifiers (RBCs).</p>
+<p>Interdependencies are discovered from transparent classifiers, such as rule-based classifiers (RBCs).</p>
 <p><img class="plain" src="images/Rule-network_contruction2.png"></p>
 <p><br><br> The conjuncts are co-predictive of the decision.</p>
-<p>Nodes - conjuncts in rules, i.e. features with their values occurring in the rules</p>
+<p>Nodes - conjuncts in rules, i.e. features with their values occurring in the rules.</p>
 <p>Edge - connects two nodes if the corresponding conjuncts occur in the same rule.</p>
 <p>RNs are built for each decision (outcome class).</p>
 </section>
@@ -500,11 +490,11 @@ var link = document.createElement( 'link' );
 <img class="plain" src="images/VIsuNet_logo2copy.png" height="100">
 </center>
 <ul>
-<li>RN visualisation tool implemented as an R package,</li>
-<li>helps identifying the strongest features and their values and the interdependencies in an ensemble of rules,</li>
+<li>RN visualization tool implemented as an R package,</li>
+<li>helps identifying the strongest features and their interdependencies,</li>
 <li>easy to use due to an interactive interface,</li>
-<li>applicable for any rule-based classifier in a correct format,</li>
-<li>available on GitHub: <a href="https://github.com/komorowskilab/VisuNet" class="uri">https://github.com/komorowskilab/VisuNet</a></li>
+<li>applicable for any RBC,</li>
+<li>publicly available on GitHub: <a href="https://github.com/komorowskilab/VisuNet" class="uri">https://github.com/komorowskilab/VisuNet</a></li>
 </ul>
 <center>
 <img class="plain" src="images/interface.png" height="250">
@@ -543,8 +533,8 @@ Rule-based model quality
 <td style="text-align:center;font-weight: bold;">
 Autism (MG)<sup>1</sup>
 </td>
-<td style="text-align:center;width: 10em; ">
-gene expressions microarray
+<td style="text-align:center;width: 10em; vertical-align: middle !important;" rowspan="5">
+gene expression levels
 </td>
 <td style="text-align:center;">
 146 patients: 82 autistic and 64 healthy boys
@@ -565,9 +555,6 @@ Autism vs Control
 <tr>
 <td style="text-align:center;font-weight: bold;vertical-align: middle !important;" rowspan="4">
 SIV (FB&amp;ZK)<sup>2</sup>
-</td>
-<td style="text-align:center;width: 10em; vertical-align: middle !important;" rowspan="4">
-gene expression
 </td>
 <td style="text-align:center;vertical-align: middle !important;" rowspan="4">
 22 Rhesus macaques: 10 infected in less than 4 challenges (Early) and 12 infected in more than 6 challenges (Late) with SIV after vaccination
@@ -646,7 +633,7 @@ ND vs T2D
 Synthetic data (KS)<sup>4</sup>
 </td>
 <td style="text-align:center;width: 10em; ">
-features correlated within each other and with the decision in the interval 0.1-1
+synthetically correlated variables
 </td>
 <td style="text-align:center;">
 500 objects: 250 D1 and 250 D2
@@ -661,7 +648,7 @@ D1 vs D2
 25
 </td>
 <td style="text-align:center;">
-from 48% to 100%
+48% - 100%
 </td>
 </tr>
 </tbody>
@@ -733,10 +720,10 @@ KS - Karolina Smolinska
 <img class="plain" src="images/Autism_net_cust.png" height="500">
 </center>
 <p>4 genes were previously reported in the SFARI Gene database of autism associations: COX2, TMLHE, NCKAP5L and TSPOAP1.</p>
-<p>Several genes identified in the literature, which need to be verified: ZSCAN18, SCIN, NCS1, CAPS2, ZFP36L2.</p>
+<p>Several genes identified in the literature as autism associated: ZSCAN18, SCIN, NCS1, CAPS2, ZFP36L2.</p>
 </section>
-<section id="a-potential-important-role-of-map7-and-cox2-interdependency-in-autism" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
-<h2>A potential important role of MAP7 and COX2 interdependency in autism</h2>
+<section id="map7-and-cox2-interdependency-in-autism" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
+<h2>MAP7 and COX2 interdependency in autism</h2>
 <div id="left">
 <p>The strongest interdependency is visible between COX2 and MAP7.</p>
 <p>COX2 regulates anxiety behaviour in the mouse model (Wong, C.T., et al., 2019)</p>
@@ -752,20 +739,20 @@ KS - Karolina Smolinska
 <section id="project-1---summary" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2>Project 1 - Summary</h2>
 <ul>
-<li>VisuNet is conceptually simple, but useful for discovery the interdependencies in RBCs,</li>
-<li>RN identifies different combinations of features and their discretisation levels that are associated with decisions,</li>
-<li>RN helps explain the differences between the classes,</li>
-<li>The autism-control RN confirms some known genes associated with autism,</li>
-<li>RN may suggest a new functionality for other attributes, e.g. MAP7 and CAPS2</li>
+<li>VisuNet is conceptually simple, but useful for interpreting RBCs,</li>
+<li>RN identifies different combinations of features and their levels that are co-predictors,</li>
+<li>RN helps explain the differences between the decision classes,</li>
+<li>autism-control RN confirms genes associations with autism,</li>
+<li>RN may help to discover the interaction mechanisms for attributes, e.g. MAP7 and CAPS2.</li>
 </ul>
-<p>The manuscript will be finished by the end of this year.</p>
+<p>The manuscript is planned to finish by the end of this year.</p>
 </section>
 <section id="project-2-funmotifs-and-the-functional-annotation-of-the-tissue-specific-noncoding-mutations" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
 <h2>Project 2: funMotifs and the functional annotation of the tissue-specific noncoding mutations</h2>
 <p>The gene expression is regulated by transcription factors (TFs) through binding to TF biding sites (motifs).<br />
-To understand how the genes are regulate, we need to know what determined functionality of TF motifs.</p>
+To understand how the genes are regulated, we need to know what determinated functionality of TF motifs.</p>
 <p>We incorporated data from large-scale genomics platforms including ENCODE, RoadMap Epigenomics and FANTOM to characterize the tissue-specific functional TF motifs.</p>
-<p>As the results funMotifs was developed by Husen M. Umer. I was mainly working on the framework applications.</p>
+<p>As a consequence, funMotifs was developed by Husen M. Umer. I was mainly working on the framework applications.</p>
 <p>Two manuscripts were written based on the Project 2.</p>
 </section>
 <section id="manuscript-1" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
@@ -793,10 +780,10 @@ To understand how the genes are regulate, we need to know what determined functi
 <p><b> Definition of candidate functional regulatory mutations (CFRMs):</b></p>
 <p>In the tissue(s) relevant for the variant.</p>
 <ul>
-<li>Overlap a TF motif and change entropy by at least |0.3|</li>
-<li>TF expression &gt; 0</li>
-<li>DNaseI peak</li>
-<li>Functionality score &gt; 2.5 or TF-peak</li>
+<li>Overlap a TF motif and change entropy by at least |0.3|,</li>
+<li>TF expression &gt; 0,</li>
+<li>DNaseI peak,</li>
+<li>Functionality score &gt; 2.5 or TF-peak.</li>
 </ul>
 </div>
 <div id="right">
@@ -815,7 +802,7 @@ To understand how the genes are regulate, we need to know what determined functi
 <ul>
 <li>SNPs and short indels from 1000 Genome project (HU &amp; KS)</li>
 <li>eQTL SNPs from the GTEx data portal v7 (HU &amp; KS)</li>
-<li>SNPs from GWAS Catalogue and SNPs in LD with GWAS SNPs (r&gt;0.8)(KS)</li>
+<li>SNPs from GWAS Catalogue and SNPs in LD with GWAS SNPs for r&gt;0.8 (KS)</li>
 </ul>
 </div>
 <div id="right">
@@ -966,9 +953,9 @@ No
 <h2>Project 2 - Summary</h2>
 <ul>
 <li>Characterization of the noncoding regions of human genome is important to understand mechanisms that lead to complex diseases,</li>
-<li>Functional annotations help to identify regulatory mutations that may significantly deregulate gene expression in cancer and other complex diseases,</li>
-<li>funMotifs applications identified potentially functional variants in cancer and normal genomes,</li>
-<li>Experimenatal validation may be perfomerd on the CFRMs to confirm our findings</li>
+<li>Functional annotations help to identify regulatory mutations that may significantly dysregulate gene expression in cancer and other complex diseases,</li>
+<li>funMotifs applications identified potential functional variants in cancer and normal genomes,</li>
+<li>Experimental validation may be performed on the CFRMs to confirm our findings</li>
 </ul>
 <p>funMotifs was implemented as a command-line pipeline (<a href="https://github.com/komorowskilab/funMotifs" class="uri">https://github.com/komorowskilab/funMotifs</a>) and a web-based interface: <a href="http://bioinf.icm.uu.se/funmotifs" class="uri">http://bioinf.icm.uu.se/funmotifs</a>.</p>
 </section>
@@ -976,9 +963,9 @@ No
 <h2>Future plans</h2>
 <ul>
 <li><p>Project 1. - implement the possibility to annotate the RN attributes using biological properties of the input datatypes and various databases, e.g. GO terms for a gene expression data.</p></li>
-<li><p>Project 2. - modification of the funMotifs algorithm to improve identification of the false positive regulatory motifs. We are planning to continue research on the functional annotation of motifs using funMotifs. We would like to extend the functional motifs definition in terms of the conservation of the individual nucleotides in TF motifs across various diseases.</p></li>
-<li><p>Project 3. - identification and visualization of interdependent genes that discern patients in the case-control studies of autism spectrum disorders by combining multiple, rule-based classifiers.</p></li>
-<li><p>Project 4. - identification of potential biomarkers that discern glioma subtypes using CFRMs from the COSMIC-available mutations for gliomas. We intersected the results with the differentially expressed genes based on the TCGA and GTEx databases.</p></li>
+<li><p>Project 2. - modification of the funMotifs algorithm to improve identification of the false positive regulatory motifs. We are planning to continue research on the functional annotation of motifs. We would like to extend the functional motifs definition in terms of the conservation of the individual nucleotides in TF motifs across various diseases.</p></li>
+<li><p>Project 3. - identification and visualization of interdependent genes that discern patients in the case-control studies of autism spectrum disorders by combining multiple rule-based classifiers.</p></li>
+<li><p>Project 4. - identification of potential biomarkers that discern glioma subtypes using CFRMs from the COSMIC-available mutations for gliomas. Intersection of CFRMs with the differentially expressed genes based on the TCGA and GTEx databases.</p></li>
 </ul>
 </section>
 <section id="section" class="slide level2" data-background-image="images/UU-figures-en-2019copy.jpg">
