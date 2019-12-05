@@ -35,16 +35,17 @@ library(cowplot, quietly = TRUE)
 ```
 
 ## Introduction {data-background-image="images/UU-figures-en-2019copy.jpg" .emphasized}
-<span class="emphasized">Pay attention to this!</span>
 
-<section style="text-align: left;">
-Left-align: This works to align text left on this slide only.
-</section>
+Uncovering explainability for the complex health-related problems is a crucial task.
 
-## {data-background-image="images/UU-figures-en-2019copy.jpg"}
+Large number of available data complicats the process of discovery the most informative features for the biological outcomes.
+We focused on developing methodologies that support that process and as the results VisuNet and funMotifs were developed.
+
+The main aim of my projects was to extend the methods and apply them to large-scale experiments created for complex diseases.
+
 
 <br><br><br><br>
-<img class="plain" src="images/study_schema.jpg" >
+<img class="plain" src="images/study_schema.png" >
 
 ## Project 1. VisuNet: an interactive tool for network visualization of rule-based models {data-background-image="images/UU-figures-en-2019copy.jpg" .emphasized}
 
@@ -75,7 +76,7 @@ Nodes - conjuncts in rules, ie. features with their values occurring in the rule
 
 Edge - connects two nodes if the corresponding conjuncts occur in the same rule. 
 
-Rule networks are built for each decision (outcome class).
+RNs are built for each decision (outcome class).
 
 
 ## VisuNet {data-background-image="images/UU-figures-en-2019copy.jpg"}
@@ -204,11 +205,13 @@ The manuscript will be finished by the end of this year.
 
 ## Project 2: funMotifs and the functional annotation of the tissue-specific noncoding mutations {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
-Aims of the project were identification and analysis of significant functional motifs in non coding region of the human genome.
+The gene expression  is regulated by transcription factors (TFs) through binding to TF biding sites (motifs).  
+To understand how the genes as regulate, we need to know what determined functionality of TF motifs. 
 
-The  TF motifs - background
+We incorporated data from large-scale genomics platforms including ENCODE, RoadMap Epigenomics and FANTOM to characterize the tissue-specific functional TF motifs.
 
-funMotifs was developed by Husen M. Umer and I was mainly working on the framework applications.
+As the results funMotifs was developed by Husen M. Umer.
+I was mainly working on the framework applications.
 
 Two manuscripts were written based on the Project 2.
 
@@ -300,6 +303,9 @@ HaploReg: Ward,L.D., et al. (2016)
 Functional annotation of mutations in the Pan Cancer Analysis of Whole Genomes consortium data for 2,500 cancer genomes in 37 cancer types. 
  **the iverview of mutation plot**
 
+## Vep_results  {data-background-image="images/UU-figures-en-2019copy.jpg"}
+
+<center><img class="plain" src="images/Vep_results.jpg" height="600"></center>
 
 ## Pancancer {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
