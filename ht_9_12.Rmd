@@ -49,9 +49,9 @@ Uncovering explainability for the complex health-related problems is a crucial t
 
 Large number of available data complicates the process of discovery the most informative features for the biological outcomes.
 
-We focused on developing methodologies that support the discovery process and as the results VisuNet and funMotifs were developed.
+We focused on developing methodologies that support the disease discovery process and as a result two tools were implemented.
 
-The main aim of my projects was to extend the methods and apply them to large-scale experiments created for complex diseases, e.g. autism and cancer.
+The main aim of my projects was to improve the methods and apply them to large-scale experiments performed on complex diseases, e.g. cancer and autism.
 
 
 <br><br><br><br>
