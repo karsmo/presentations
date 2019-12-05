@@ -59,9 +59,8 @@ The main aim of my projects was to extend the methods and apply them to large-sc
 
 ## Project 1. VisuNet: an interactive tool for network visualization of rule-based models {data-background-image="images/UU-figures-en-2019copy.jpg" .emphasized}
 
-## Explainability make classifiers biologically meaningful {data-background-image="images/UU-figures-en-2019copy.jpg" .emphasized}
 
-
+Explainability make classifiers biologically meaningful
 
 <img class="plain" src="images/schema.png">
 
