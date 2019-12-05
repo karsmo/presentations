@@ -1,5 +1,5 @@
 ---
-title: "Bioinformatics tools to analyse complex diseases"
+title: "Computational methods for understanding complex human diseases"
 subtitle: "Half-time presentation"
 author: "Karolina Smolinska-Garbulowska"
 date: "supervisor: Jan Komorowski <br><br> Upppsala, 2019-12-09"
