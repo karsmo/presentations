@@ -5,7 +5,7 @@ author: "Karolina Smolinska-Garbulowska"
 date: "supervisor: Jan Komorowski <br><br> Upppsala, 2019-12-09"
 output: 
   revealjs::revealjs_presentation:
-    self_contained: false
+    self_contained: true
     highlight: pygments
     transition: slide
     css: "hygge.css"

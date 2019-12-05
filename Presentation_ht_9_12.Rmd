@@ -1,14 +1,15 @@
 ---
-title: "Computational methods for understanding complex human diseases"
+title: "Elucidation of complex diseases with machine learning"
 subtitle: "Half-time presentation"
 author: "Karolina Smolinska-Garbulowska"
 date: "supervisor: Jan Komorowski <br><br> Upppsala, 2019-12-09"
 output: 
   revealjs::revealjs_presentation:
-    self_contained: false
+    self_contained: true
     highlight: pygments
     transition: slide
     css: "hygge.css"
+    template: temp.html
     center: false
     fig_width: 7
     fig_height: 6
@@ -104,7 +105,7 @@ collapse_rows_dt <- data.frame(Dataset = c(paste0(rep("Autism (MG)", 1),footnote
                                            paste0(rep("SIV (FB&ZK)", 4),footnote_marker_number(2)),
                                            paste0(rep("ULSAM (KD)", 1),footnote_marker_number(3)),
                                            paste0(rep("Synthetic data (KS)",1),footnote_marker_number(4))),
-                               `Data type` = c(c('gene expression levels'),
+                               `Data type` = c(c('gene expression  levels'),
                                                rep("gene expression levels", 4),
                                                rep("metabolite levels", 1),
                                                rep("synthetically correlated variables", 1)),
@@ -145,10 +146,10 @@ kable(collapse_rows_dt, format = 'html', align = rep("c",7),escape = F, col.name
   column_spec(1, bold = T) %>%
   column_spec(2, width = "10em") %>% 
   collapse_rows(columns = 1:4, valign = "middle") %>%
-  footnote(general = "Data sorce",
+  footnote(general_title = "Data sorce",
            number = c("Alter, M.D., et al., 2011",
                       "Barrenäs, F., et al., 2019",
-                      "", "Garbulowski, M., et al., 2019 ")
+                      "Fall, T., et al., 2016", "Garbulowski, M., et al., 2019 ")
            )
 
 ```
@@ -162,9 +163,7 @@ kable(collapse_rows_dt, format = 'html', align = rep("c",7),escape = F, col.name
 <h5><p align="left">KD - Klev Diamanti</p></h5>
 <h5><p align="left">KS - Karolina Smolinska</p> </h5>
 
-## Case-control studies of autism - sample RN {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
-<iframe src='images/net_Autism_fig_new1.html' style='height:800px;width:800px'></iframe> 
 
 ## Case-control studies of autism - sample RN {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
