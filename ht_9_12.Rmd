@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "Bioinformatics tools to analysis complex diseases"
 subtitle: "Half-time presentation"
 author: "Karolina Smolinska-Garbulowska"
 date: "supervisor: Jan Komorowski <br><br> Upppsala, 2019-12-09"
@@ -38,10 +38,10 @@ library(cowplot, quietly = TRUE)
 
 Uncovering explainability for the complex health-related problems is a crucial task.
 
-Large number of available data complicats the process of discovery the most informative features for the biological outcomes.
+Large number of available data complicate the process of discovery the most informative features for the biological outcomes.
 We focused on developing methodologies that support that process and as the results VisuNet and funMotifs were developed.
 
-The main aim of my projects was to extend the methods and apply them to large-scale experiments created for complex diseases.
+The main aim of my projects was to extend the methods and apply them to large-scale experiments created for complex diseases, e.g. autism, cancer.
 
 
 <br><br><br><br>
@@ -62,7 +62,7 @@ Explainability:
 
 
 
-## Rule-network (RN) construction  {data-background-image="images/UU-figures-en-2019copy.jpg"}
+## Rule-network (RN) construction {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
 
 Interactions are discovered from transparent classifiers, such as rule-based classifiers (RBC). 
@@ -72,7 +72,7 @@ Interactions are discovered from transparent classifiers, such as rule-based cla
 <br><br>
 The conjuncts are co-predictive of the decision.
 
-Nodes - conjuncts in rules, ie. features with their values occurring in the rules
+Nodes - conjuncts in rules, i.e.  features with their values occurring in the rules
 
 Edge - connects two nodes if the corresponding conjuncts occur in the same rule. 
 
@@ -173,12 +173,12 @@ Several genes identified in the literature, which need to be verified: ZSCAN18, 
 
 
 
-## A  potential important role of MAP7 and COX2 interdependecy in autism {data-background-image="images/UU-figures-en-2019copy.jpg"}
+## A  potential important role of MAP7 and COX2 interdependency  in autism {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
 <div id="left">
 The strongest interdependency is visible between COX2 and MAP7. 
   
-COX2 regulates anxiety behavior in the mouse model (Wong, C.T., et al., 2019)
+COX2 regulates anxiety behaviour in the mouse model (Wong, C.T., et al., 2019)
 
 MAP7 is required for axon growth and branch formation during embryonic brain formation.
 The association of MAP7 with autism and schizophrenia was previously reported (Tymanskyj, S.R., et al., 2017)
@@ -195,9 +195,9 @@ RN may suggest a link between embryonic development events and anxiety behaviour
 ## Project 1 - Summary  {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
 - VisuNet is conceptually simple, but useful for the interdependencies discovery in RBCs,
-- RN  identifies different combinations of features and their  discretisation levels that are associated with decisions,
-- RN helps explain the differences beteen the classes,
-- In the the autism-control RN confirms some known genes associated with autism,
+- RN identifies different combinations of features and their discretisation levels that are associated with decisions,
+- RN helps explain the differences between the classes,
+- In the autism-control RN confirms some known genes associated with autism,
 - RN may suggest a new functionality for other of the attributes, e.g. MAP7 and CAPS2
 
 
@@ -205,7 +205,7 @@ The manuscript will be finished by the end of this year.
 
 ## Project 2: funMotifs and the functional annotation of the tissue-specific noncoding mutations {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
-The gene expression  is regulated by transcription factors (TFs) through binding to TF biding sites (motifs).  
+The gene expression is regulated by transcription factors (TFs) through binding to TF biding sites (motifs).  
 To understand how the genes as regulate, we need to know what determined functionality of TF motifs. 
 
 We incorporated data from large-scale genomics platforms including ENCODE, RoadMap Epigenomics and FANTOM to characterize the tissue-specific functional TF motifs.
@@ -216,7 +216,7 @@ I was mainly working on the framework applications.
 Two manuscripts were written based on the Project 2.
 
 
-## funMotifs freamwork {data-background-image="images/UU-figures-en-2019copy.jpg"}
+## funMotifs framework {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
 <div id="left">
 <b> funMotifs content:</b>
@@ -254,7 +254,7 @@ In the tissue(s) relevant for the variant.
 
 - SNPs and short indels from 1000 Genome project (HU & KS)
 - eQTL SNPs from the GTEx data portal v7 (HU & KS)
-- SNPs from GWAS Catalogue and SNPs in LD with GWAS SNPs ()(KS)
+- SNPs from GWAS Catalogue and SNPs in LD with GWAS SNPs (r>0.8)(KS)
 
 <br><br>
 <h5>HS - Husen M. Umer</h5>
@@ -298,36 +298,49 @@ HaploReg: Ward,L.D., et al. (2016)
 
 <center><img class="plain" src="images/MS_2.png" align="middle" style="border:1px solid black"></center>
 
-<b>The Aim of the study</b>
+<b>The aim of the study</b>
 
-Functional annotation of mutations in the Pan Cancer Analysis of Whole Genomes consortium data for 2,500 cancer genomes in 37 cancer types. 
- **the iverview of mutation plot**
+Functional annotation of mutations in the Pan Cancer Analysis of Whole Genomes consortium data for 2,500 cancer genomes in 37 cancer types.
 
-## Vep_results  {data-background-image="images/UU-figures-en-2019copy.jpg"}
+We identified 
 
-<center><img class="plain" src="images/Vep_results.jpg" height="600"></center>
+
+## Overview of mutations {data-background-image="images/UU-figures-en-2019copy.jpg"}
+
+<center><img class="plain" src="images/data_overwiev.png" ></center>
 
 ## Pancancer {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
 <center><img class="plain" src="images/pancancer_schema.png" height="650" align="middle"></center>
 
-## CEBP mutatation {data-background-image="images/UU-figures-en-2019copy.jpg"}
+## CEBPB - the most significantly mutated motifs {data-background-image="images/UU-figures-en-2019copy.jpg"}
+
+<center><img class="plain" src="images/cebp.png" height="500"></center>
+
+The active motifs of CEBPB are significantly less methylated genome-wide than inactive motifs and still there is an abundance of mutations at this site (P-value < 1e-50)
+
+## Highly recurrent mutated regulatory elements {data-background-image="images/UU-figures-en-2019copy.jpg"}
+
 
 ## Project 2 - Summary  {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
-- funMotifs was implemented as a command-line pipeline (https://github.com/komorowskilab/funMotifs) and a web-based interface: http://bioinf.icm.uu.se/funmotifs.
+- Characterization of the noncoding regions of genome is important to understand mechanisms that lead to complex diseases,
+- Functional annotations help identify regulatory mutations that may significantly regulate gene expression in cancer and other complex diseases
+
+
+funMotifs was implemented as a command-line pipeline (https://github.com/komorowskilab/funMotifs) and a web-based interface: http://bioinf.icm.uu.se/funmotifs.
 
 
 
 ## Future plans {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
-- Project 1.  - implement the possibility to annotate the RN attributes using biological properties of the input datatypes and various databases, e.g. GO terms for a gene expresession data. 
+- Project 1.  - implement the possibility to annotate the RN attributes using biological properties of the input datatypes and various databases, e.g. GO terms for a gene expression data. 
 
-- Project 2. - Modification of the funMotifs algorithm to improve indetification of the false positive regulatory motifs. We are planning to continue research on the functional annotation of motifs using funMotifs. We would like to extend the functional motifs definition in terms of the conservation of the individual nucleotides in transcription factor motifs.  
+- Project 2. - Modification of the funMotifs algorithm to improve identification of the false positive regulatory motifs. We are planning to continue research on the functional annotation of motifs using funMotifs. We would like to extend the functional motifs definition in terms of the conservation of the individual nucleotides in transcription factor motifs.  
 
 - Project 3. on identification and visualization of interdependent genes that discern patients in the case-control studies of autism spectrum disorders by combining multiple, rule-based classifiers. 
 
-- Project 4.- indetification of potential biomarkers that discern glioma subtypes using CFRMs from the COSMIC-available mutations for gliomas. We intersected the results with the differenialy expressed genes based on the TCGA and GTEx databases.
+- Project 4.- identification of potential biomarkers that discern glioma subtypes using CFRMs from the COSMIC-available mutations for gliomas. We intersected the results with the differentially expressed genes based on the TCGA and GTEx databases.
 
 ##  {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
