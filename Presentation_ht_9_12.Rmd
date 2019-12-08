@@ -46,9 +46,7 @@ Uncovering explainability for the complex health-related problems is a crucial t
 Large number of available data complicates the process of discovery the most informative features for the biological outcomes.
 Machine learning methods can be a solution for this problem. 
 
-We focused on developing machine learning-based methodologies that support the identifcation and interpretation of patterns from biological data and as a result two tools were implemented.
-
-The main aim of my projects was to improve the methods and apply them to large-scale experiments performed on complex diseases, e.g. cancer and autism.
+We focused on developing machine learning-based methodologies that support the identifcation and interpretation of patterns from biological data and as a result two tools were implemented. The main aim of my projects was to improve the methods and apply them to large-scale experiments performed on complex diseases, e.g. cancer and autism.
 
 <div id="left">
 <img class="plain" src="images/ml_schema.png" >
@@ -56,7 +54,7 @@ The main aim of my projects was to improve the methods and apply them to large-s
 </div>
 
 <div id="right">
-<img class="plain" src="images/ml.jpg" >
+<img class="plain" src="images/ml.jpg" style="max-width:80%;">
 <br>
 <small>https://www.mindtheproduct.com/5-machine-learning-lessons-for-product-managers/</small>
 </div>
@@ -95,7 +93,7 @@ Interdependencies are discovered from transparent classifiers, such as rule-base
 
 <img class="plain" src="images/Rule-network_contruction2.png">
 
-<br><br>
+
 The conjuncts are co-predictive of the decision.
 
 Nodes - conjuncts in rules, i.e.  features with their values occurring in the rules.
@@ -208,11 +206,10 @@ ULSAM - the uppsala longitudinal study on Adult men cohort- LC-MS (liquid chroma
 
 ## Case-control studies of autism - sample RN {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
-<center><img class="plain" src="images/Autism_net_cust.png" height="500"></center>
+<center><img class="plain" src="images/Autism_net_cust.png" height="450"></center>
 
 4 genes were previously reported in the SFARI Gene database of autism associations: COX2,  TMLHE,  NCKAP5L and TSPOAP1.
-
-Several genes identified in the literature as autism associated: MAP7,ZSCAN18, SCIN, NCS1, CAPS2, ZFP36L2.
+<br>Several genes identified in the literature as autism associated: MAP7,ZSCAN18, SCIN, NCS1, CAPS2, ZFP36L2.
 
 <aside class="notes">
 12 genes common, but different levels
@@ -254,15 +251,13 @@ The manuscript is planned to finish by the end of this year.
 
 ## Project 2: funMotifs and the functional annotation of the tissue-specific noncoding mutations {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
-The gene expression is regulated by transcription factors (TFs) through binding to TF biding sites (motifs).  
-To understand how the genes are regulated, we need to know what determinated functionality of TF motifs. 
+The gene expression is regulated by transcription factors (TFs) through binding to TF biding sites (motifs). To understand how the genes are regulated, we need to know what determinated functionality of TF motifs. 
 We tried to characterize tissue-specific functional TF motifs by incorporating data from large-scale genomics platforms including ENCODE, RoadMap Epigenomics and FANTOM. The logistic regression was applied to obtain the functionality score of TF motifs.
-
-As a consequence, funMotifs was developed by Husen M. Umer.
+<br>As a consequence, funMotifs was developed by Husen M. Umer.
 I was mainly working on the framework applications.
 Two manuscripts were written based on the Project 2.
 
-<center><img class="plain" src="images/tf.png" style="max-width:50%;" ><center>
+<center><img class="plain" src="images/tf.png" style="max-width:33%;" ><center>
 
 <small><p align="left">http://2013.igem.org/Team:XMU_Software/Project/promoter</p></small>
 
@@ -363,7 +358,7 @@ knitr::kable(data)%>%
 <center><img class="plain" src="images/funmotif_comp.png" height="450"></center>
 </div>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 RegulomeDB: Boyle,A.P., et al. (2012) 
 
 HaploReg: Ward,L.D., et al. (2016) 
