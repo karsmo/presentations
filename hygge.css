@@ -302,3 +302,25 @@ body {
 	font-size: 0.85em;
 	line-height: 1.5; 
 }
+
+
+    
+#left2 {
+	margin: 10px 0 2px;
+	text-align: left;
+	float: left;
+	z-index:-10;
+	width:68%;
+	font-size: 0.85em;
+	line-height: 1.5; 
+}
+
+#right2 {
+	margin: 5px 0 15px 0;
+	float: right;
+	text-align: left;
+	z-index:-10;
+	width:30%;
+	font-size: 0.85em;
+	line-height: 1.5; 
+}

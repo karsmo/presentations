@@ -5,7 +5,8 @@ author: "Karolina Smolinska-Garbulowska"
 date: "supervisor: Jan Komorowski <br><br> Upppsala, 2019-12-09"
 output: 
   revealjs::revealjs_presentation:
-    self_contained: true
+    self_contained: false
+    reveal_plugins: ["notes"]
     highlight: pygments
     transition: slide
     css: "hygge.css"
@@ -43,14 +44,33 @@ library(cowplot, quietly = TRUE)
 Uncovering explainability for the complex health-related problems is a crucial task.
 
 Large number of available data complicates the process of discovery the most informative features for the biological outcomes.
+Machine learning methods can be a solution for this problem. 
 
-We focused on developing methodologies that support the disease discovery process and as a result two tools were implemented.
+We focused on developing machine learning-based methodologies that support the identifcation and interpretation of patterns from biological data and as a result two tools were implemented.
 
 The main aim of my projects was to improve the methods and apply them to large-scale experiments performed on complex diseases, e.g. cancer and autism.
 
+<div id="left">
+<img class="plain" src="images/ml_schema.png" >
 
-<br><br><br><br>
-<img class="plain" src="images/study_schema.png" >
+</div>
+
+<div id="right">
+<img class="plain" src="images/ml.jpg" >
+<br>
+<small>https://www.mindtheproduct.com/5-machine-learning-lessons-for-product-managers/</small>
+</div>
+
+
+
+
+<aside class="notes">
+ML - extracting meaningful information and hidden pattern among subsets of samples  from large and complex datasets. 
+Supervised/unsupervisd
+Logistic regression - find the best fit line which can predict the impact of the independent variable/features on target/decision, sigmoid function, binary outcome
+	</aside>
+
+
 
 ## Project 1. VisuNet: an interactive tool for network visualization of rule-based models {data-background-image="images/UU-figures-en-2019copy.jpg" .emphasized}
 
@@ -64,7 +84,9 @@ Explainability:
 - What interdependencies of genes/variables contribute to classification?
 - What variables/genes are more important?
 
-
+<aside class="notes">
+Rule-based classifeirs providing computational solutions to complex problems in health-related decision tasks is explainability; RBC are transparent
+</aside>
 
 ## Rule-network (RN) construction {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
@@ -97,7 +119,9 @@ RNs are built for each decision (outcome class).
 
 <center><img class="plain" src="images/interface.png" height="250"></center>
 
-
+<aside class="notes">
+hubs
+</aside>
 ## Applications {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
 ```{r, echo =FALSE}
@@ -135,14 +159,16 @@ collapse_rows_dt <- data.frame(Dataset = c(paste0(rep("Autism (MG)", 1),footnote
                                )
 
 
-kable(collapse_rows_dt, format = 'html', align = rep("c",7),escape = F, col.names = c("Dataset",
+kable(collapse_rows_dt, #format = 'html', 
+      align = rep("c",7),escape = F, col.names = c("Dataset",
                            "Data type",
                            "#objects",
                            "Decision",
                            "Models",
                            "#features",
                            "Rule-based model quality")) %>%
-  kable_styling(full_width = F, font_size = 13,position = "center") %>%
+  kable_styling(full_width = T, font_size = 13,position = "center") %>%
+   row_spec(1, color = "darkslategray", background = "PowderBlue") %>% 
   column_spec(1, bold = T) %>%
   column_spec(2, width = "10em") %>% 
   collapse_rows(columns = 1:4, valign = "middle") %>%
@@ -163,7 +189,22 @@ kable(collapse_rows_dt, format = 'html', align = rep("c",7),escape = F, col.name
 <h5><p align="left">KD - Klev Diamanti</p></h5>
 <h5><p align="left">KS - Karolina Smolinska</p> </h5>
 
+<aside class="notes">
+Expression levels of 54678 genes Affymetrix Human Genome Array
+Fast Correlation-Based Filter dimensionality reduction method  (FCBF)
+SIV -  simian immunodeficiency virus; acquiring protection against SIV upon vaccination of Rhesus macaques with a new sterilizing vaccine by the avian influenza virus. whole blood transcriptomic profiling, DNA prime (week 0), MVA boosts (week 16 and week 32) and C1 - SIV Challenge - W57
+ULSAM - the uppsala longitudinal study on Adult men cohort- LC-MS (liquid chromatography-mass spectrometry) non targeted metablomics analysis
+</aside>
 
+## Case-control studies of autism - sample RN {data-background-image="images/UU-figures-en-2019copy.jpg"}
+<div id="left2">
+<iframe src='images/net_Autism_fig_new1.html' style='height:800px;width:800px'></iframe> 
+</div>
+
+<div id="right2">
+<center><img class="plain" src="images/legend.png" align="middle" style="max-width:40%;"></center>
+
+</div>
 
 ## Case-control studies of autism - sample RN {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
@@ -171,9 +212,15 @@ kable(collapse_rows_dt, format = 'html', align = rep("c",7),escape = F, col.name
 
 4 genes were previously reported in the SFARI Gene database of autism associations: COX2,  TMLHE,  NCKAP5L and TSPOAP1.
 
-Several genes identified in the literature as autism associated: ZSCAN18, SCIN, NCS1, CAPS2, ZFP36L2.
+Several genes identified in the literature as autism associated: MAP7,ZSCAN18, SCIN, NCS1, CAPS2, ZFP36L2.
 
+<aside class="notes">
+12 genes common, but different levels
+NCKAP5L - neurodevelopmental dysfunction in autism
+SCIN, NCS1 - calcium homeostasis is altered in autism disorders;CAps2 - mouse models, microdeletions cnv;
+ZSCAN18, ZFP36L2 - zinc fingers;
 
+</aside>
 
 ## MAP7 and COX2 interdependency  in autism {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
@@ -209,13 +256,15 @@ The manuscript is planned to finish by the end of this year.
 
 The gene expression is regulated by transcription factors (TFs) through binding to TF biding sites (motifs).  
 To understand how the genes are regulated, we need to know what determinated functionality of TF motifs. 
-
-We incorporated data from large-scale genomics platforms including ENCODE, RoadMap Epigenomics and FANTOM to characterize the tissue-specific functional TF motifs.
+We tried to characterize tissue-specific functional TF motifs by incorporating data from large-scale genomics platforms including ENCODE, RoadMap Epigenomics and FANTOM. The logistic regression was applied to obtain the functionality score of TF motifs.
 
 As a consequence, funMotifs was developed by Husen M. Umer.
 I was mainly working on the framework applications.
-
 Two manuscripts were written based on the Project 2.
+
+<center><img class="plain" src="images/tf.png" style="max-width:50%;" ><center>
+
+<small><p align="left">http://2013.igem.org/Team:XMU_Software/Project/promoter</p></small>
 
 ## Manuscript 1 {data-background-image="images/UU-figures-en-2019copy.jpg"}
 <br><br><br>
@@ -232,7 +281,6 @@ Two manuscripts were written based on the Project 2.
   - TF peak, 
   - DNase1 site,
   - Chromatin state,
-  - Replication domain,
   - …
   
 <b> Definition of candidate functional regulatory mutations (CFRMs):</b> 
@@ -250,12 +298,21 @@ In the tissue(s) relevant for the variant.
 <img class="plain" src="images/funMotifs_schema.png" >
 
 </div>
+<aside class="notes">
+DHSs - DNase I hypersensitive sites
+The odds ratio is the probability of success/probability of failure. 
+Logistic regression - find the best fit line which can predict the impact of the independent variable/features on target/decision, sigmoid function, binary outcome
 
-## CFRMs distribution {data-background-image="images/UU-figures-en-2019copy.jpg"}
+
+</aside>
+
+## Functional motifs distribution {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
 <center><img class="plain" src="images/mut_ov.png" style="max-width:105%;"><center>
 
-
+<aside class="notes">
+THe average fuctional score 3.725 and sd 0.587
+</aside>
 
 ## Applications {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
@@ -265,7 +322,7 @@ In the tissue(s) relevant for the variant.
 
 - SNPs and short indels from 1000 Genome project (HU & KS)
 - eQTL SNPs from the GTEx data portal v7 (HU & KS)
-- SNPs from GWAS Catalogue and SNPs in LD with GWAS SNPs for r>0.8 (KS)
+- SNPs from GWAS Catalogue and SNPs in LD with GWAS SNPs for r^2^>0.8 (KS)
 
 
 </div>
@@ -275,8 +332,16 @@ In the tissue(s) relevant for the variant.
 </div>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<h5><p align="left">HS - Husen M. Umer</p></h5>
+<h5><p align="left">HU - Husen M. Umer</p></h5>
 <h5><p align="left">KS - Karolina Smolinska</p></h5>
+
+<aside class="notes">
+84milions 1000GP - 0.26%  functional var
+2milions eQTL SNPs - 0.24%
+687k GWAS - - 0.17%
+LD - Linkage disequilibrium - non-random association of SNPs at different loci in a given population
+</aside>
+
 
 ## Comparison to existing annotation databases {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
@@ -307,6 +372,13 @@ HaploReg: Ward,L.D., et al. (2016)
 
 <center><img class="plain" src="images/funmotifs_snp.png" height="600"></center>
 
+<aside class="notes">
+snp in 4 tissues: blood, breast, liver, myeloid
+associated with 4 ld snps, 2 breast cancer risk variants
+eqtl asscoted with SSBP4-  tumor-suppressor gene
+MCF7 -breast cancer cell line
+</aside>
+
 ## Manuscript 2 {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
 <center><img class="plain" src="images/MS_2.png" align="middle" style="border:1px solid black"></center>
@@ -318,15 +390,24 @@ Functional annotation of mutations in the Pan Cancer Analysis of Whole Genomes c
 <b>Results</b>
 
 Using the funMotifs framework we identified 121,029 CFRMs overlapped 217,075 potentially functional motifs across the 44 cohorts. 
-Many CFRMs were found in genes that were previously linked with cancer.
+Many CFRMs were found nearby genes that were previously linked with cancer.
 
 ## Overview of mutations {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
-<center><img class="plain" src="images/data_overwiev.png" ></center>
+<center><img class="plain" src="images/data_overwiev.png" style="max-width:105%;"></center>
+
+<aside class="notes">
+25 milions of mutations
+B. corresponding cell line
+4 milions overlapped tf-motis: 1.8% overlapped matching TF peaks.
+High ditruptive effect on the protein (inclusion of coding mutations)
+</aside>
+
 
 ## Workflow {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
-<center><img class="plain" src="images/pancancer_schema.png" height="650" align="middle"></center>
+<center><img class="plain" src="images/pancancer_schema.jpg" height="650" align="middle"></center>
+
 
 ## CEBPB - the most significantly mutated motifs {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
@@ -334,10 +415,23 @@ Many CFRMs were found in genes that were previously linked with cancer.
 
 The active motifs of CEBPB are significantly less methylated genome-wide than inactive motifs and still there is an abundance of mutations at this site (P-value < 1e-50).
 
+<aside class="notes">
+5 cell lines: HeLa-3, HepG2,IMR-90, K562, GM12878
+Active motifs: CEBPB motifs + ChIP-seq peaks from the corresponding cell line.
+Methylation levels:  ENCODE WGBS experiments. t-test
+</aside>
+
 ## Highly recurrent mutated regulatory elements {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
 <center><img class="plain" src="images/Myc.png" height="500"></center>
 
+<aside class="notes">
+multiple neigheboring mutated motifs may affect the same regulatory elements -> mFREs;
+200 bp window merged; 
+local hypermutated regions, the significance of the accumulated FS of each element by comparing to a local background distribution of simulated elements within a 50Kb window;
+8,716 mFREs with 20,801 CFRMs; 399 mFREs  mutated in >10 samples
+GENES overlapped 2kb many cancer associated; MYC - oncogene
+	</aside>
 
 ## Project 2 - Summary  {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
@@ -349,7 +443,11 @@ The active motifs of CEBPB are significantly less methylated genome-wide than in
 
 funMotifs was implemented as a command-line pipeline (https://github.com/komorowskilab/funMotifs) and a web-based interface: http://bioinf.icm.uu.se/funmotifs.
 
+## Summary {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
+- We applied machine learning appoaches on different health-related biological problems
+
+- We created two tools that simplified the procedure of identificationa and interpretation of a large-scale data
 
 ## Future plans {data-background-image="images/UU-figures-en-2019copy.jpg"}
 
